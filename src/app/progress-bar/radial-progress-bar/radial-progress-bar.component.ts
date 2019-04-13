@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-radial-progress-bar',
@@ -7,9 +7,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RadialProgressBarComponent implements OnInit {
 
+  @Input() score: number = 10;
+  @Input() text: string = 'test';
+  @Input() color: string;
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  ngOnChanges(): void {
+    this.score = this.score < 0 ? 0 : this.score > 100 ? 100 : Math.floor(this.score / 10) * 10;
+    console.log(this.color);
+
+
+
+
+
   }
 
 }
