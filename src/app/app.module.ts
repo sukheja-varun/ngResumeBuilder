@@ -4,11 +4,13 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RadialProgressBarComponent } from './progress-bar/radial-progress-bar/radial-progress-bar.component';
+import { HobbyComponent } from './component/hobby/hobby.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    RadialProgressBarComponent
+    RadialProgressBarComponent,
+    HobbyComponent
   ],
   imports: [
     BrowserModule,
