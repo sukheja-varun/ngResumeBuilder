@@ -17,12 +17,12 @@ export interface PersonalInfo {
     name: string;
     title: string;
     address: string;
-    mobile: number;
+    mobile: string;
     email: string;
-    website: string;
-    fb: string;
-    linkedIn: string;
-    twitter: string;
+    website?: string;
+    fb?: string;
+    linkedIn?: string;
+    twitter?: string;
 }
 
 export interface Experience {
