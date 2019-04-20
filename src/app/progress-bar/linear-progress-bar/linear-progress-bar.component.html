@@ -1,0 +1,4 @@
+<div class="lang-container" >
+  <p>{{level.language}}</p>
+  <div *ngFor="let range of higlightLevel; let i=index"  [ngClass]="i < level.level ? 'redDot':'dot'"></div>
+</div>
