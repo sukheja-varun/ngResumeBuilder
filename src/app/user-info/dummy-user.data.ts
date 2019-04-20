@@ -12,26 +12,26 @@ export const dummyUser: User = {
     },
     education: [
         {
-            institue: 'LNCT, Bhopal',
+            institute: 'LNCT, Bhopal',
             startDate: '2011',
             endDate: '2015',
             shortDescription: 'Completed Honors Degree in Bachelors Of Computer Science with a score of 79.1%'
         }
     ],
     work: [{
-        institue: 'Amdocs',
+        institute: 'Amdocs',
         startDate: '2015',
         endDate: '2016',
         shortDescription: 'Worked as a Java Backend Developer in Java R&D Team as a Level3 developer.'
     },
     {
-        institue: 'ShoppinPal',
+        institute: 'ShoppinPal',
         startDate: '2016',
         endDate: '2018',
         shortDescription: 'Handled 2 major roles that are being a Full Stack Developer and Scrum Master. Received the award "All Rounder of The Year" for contributions in various fields.'
     },
     {
-        institue: 'LeagueAdda',
+        institute: 'LeagueAdda',
         startDate: '2018',
         endDate: '2019',
         shortDescription: 'Got new experience to work in the Gaming Domain as a Full Stack Developer and to learn new framework Ionic4'

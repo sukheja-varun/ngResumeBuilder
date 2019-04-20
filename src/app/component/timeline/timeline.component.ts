@@ -1,4 +1,6 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, Input } from '@angular/core';
+
+import { Experience } from 'src/app/user-info/user-info.model';
 
 @Component({
   selector: 'app-timeline',
@@ -7,6 +9,8 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
   encapsulation: ViewEncapsulation.None
 })
 export class TimelineComponent implements OnInit {
+
+  @Input() experiences: Experience[];
 
   constructor() { }
 

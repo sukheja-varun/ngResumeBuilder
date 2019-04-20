@@ -26,7 +26,7 @@ export interface PersonalInfo {
 }
 
 export interface Experience {
-    institue: string;
+    institute: string;
     startDate: string;
     endDate: string;
     shortDescription: string;
