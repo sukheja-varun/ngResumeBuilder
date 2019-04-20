@@ -6,6 +6,8 @@ import { RadialProgressBarComponent } from './progress-bar/radial-progress-bar/r
 import { HobbyComponent } from './component/hobby/hobby.component';
 import { TimelineComponent } from './component/timeline/timeline.component';
 import { LinearProgressBarComponent } from './progress-bar/linear-progress-bar/linear-progress-bar.component';
+import { FooterComponent } from './footer/footer.component';
+
 
 @NgModule({
   declarations: [
@@ -13,7 +15,8 @@ import { LinearProgressBarComponent } from './progress-bar/linear-progress-bar/l
     RadialProgressBarComponent,
     HobbyComponent,
     TimelineComponent,
-    LinearProgressBarComponent
+    LinearProgressBarComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
