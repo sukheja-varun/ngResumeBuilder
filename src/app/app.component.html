@@ -4,12 +4,16 @@
   <img width="150" alt="Angular Logo"
     src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==" />
 </div>
-
 <app-hobby [hobby]="'music'"></app-hobby>
 <app-hobby [hobby]="'dancing'"></app-hobby>
 <app-hobby [hobby]="'painting'"></app-hobby>
+
+<app-linear-progress-bar *ngFor="let item of [{language:'English',level:8}, {language:'Marathi',level:2.1}, {language:'Hindi',level:9}, {language:'Sindhi',level:5}]"
+ [text]="item.language" [score]="item.level" color="blue">
+</app-linear-progress-bar>
 
 <app-radial-progress-bar *ngFor="let num of [10, 22, 30, 40, 50, 60, 70, 80, 90, 100]" [text]="num" [score]="num">
 </app-radial-progress-bar>
 
 <router-outlet></router-outlet>
+

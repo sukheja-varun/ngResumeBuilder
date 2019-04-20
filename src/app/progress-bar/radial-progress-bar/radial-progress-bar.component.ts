@@ -18,12 +18,6 @@ export class RadialProgressBarComponent implements OnInit {
 
   ngOnChanges(): void {
     this.score = this.score < 0 ? 0 : this.score > 100 ? 100 : Math.floor(this.score / 10) * 10;
-    console.log(this.color);
-
-
-
-
-
   }
 
 }
