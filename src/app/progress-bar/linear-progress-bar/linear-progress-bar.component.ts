@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ViewEncapsulation} from '@angular/core';
+import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-linear-progress-bar',
@@ -7,11 +7,20 @@ import { Component, OnInit, Input, ViewEncapsulation} from '@angular/core';
   encapsulation: ViewEncapsulation.None
 })
 export class LinearProgressBarComponent implements OnInit {
-  @Input() level;
-  public higlightLevel = new Array(10);
+  @Input() score: number = 0;
+  @Input() text: string = 'test';
+  @Input() color: string = 'red';
+  
+  public totalScore = new Array(10);
+
   constructor() { }
 
   ngOnInit() {
-  
+
+  }
+
+  ngOnChanges(): void {
+    this.score =  Math.floor(this.score);
   }
 }
+

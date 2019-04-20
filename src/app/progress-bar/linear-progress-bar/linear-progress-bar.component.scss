@@ -1,4 +1,4 @@
-.lang-container{
+.linear-progress-container {
   text-align: center;
   .dot {
     height: 6px;
@@ -8,13 +8,4 @@
     display: inline-block;
     margin-left: 2px;
   }
-  .redDot {
-    height: 6px;
-    width: 6px;
-    background-color: red;
-    border-radius: 50%;
-    display: inline-block;
-    margin-left: 2px;
-  }
 }
-

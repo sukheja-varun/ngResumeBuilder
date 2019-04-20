@@ -1,4 +1,4 @@
-<div class="lang-container" >
-  <p>{{level.language}}</p>
-  <div *ngFor="let range of higlightLevel; let i=index"  [ngClass]="i < level.level ? 'redDot':'dot'"></div>
+<div class="linear-progress-container">
+  <p>{{text}}</p>
+  <div *ngFor="let range of totalScore; let i=index" class="dot"  [ngStyle]="{'background-color': score > i ? color :''}" ></div>
 </div>

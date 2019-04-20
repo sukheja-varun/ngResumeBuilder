@@ -8,8 +8,12 @@
 <app-hobby [hobby]="'dancing'"></app-hobby>
 <app-hobby [hobby]="'painting'"></app-hobby>
 
+<app-linear-progress-bar *ngFor="let item of [{language:'English',level:8}, {language:'Marathi',level:2.1}, {language:'Hindi',level:9}, {language:'Sindhi',level:5}]"
+ [text]="item.language" [score]="item.level" color="blue">
+</app-linear-progress-bar>
+
 <app-radial-progress-bar *ngFor="let num of [10, 22, 30, 40, 50, 60, 70, 80, 90, 100]" [text]="num" [score]="num">
 </app-radial-progress-bar>
-<app-linear-progress-bar *ngFor="let langLevel of [{language:'English',level:8}, {language:'Marathi',level:10}, {language:'Hindi',level:9}, {language:'Sindhi',level:5}]" [level]="langLevel"></app-linear-progress-bar>
+
 <router-outlet></router-outlet>
 
