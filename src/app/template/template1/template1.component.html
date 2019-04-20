@@ -4,9 +4,13 @@
 
 <div class="template1-wrapper">
   <div class="header">HEADER</div>
-  <div class="timeline">TIMELINE</div>
+  <div class="timeline">
+    <app-timeline [experiences]="userData.work"></app-timeline>
+  </div>
   <div class="skills">SKILLS</div>
   <div class="languages">Languages</div>
   <div class="hobbies">HOBBIES</div>
-  <div class="footer">FOOTER</div>
+  <div class="footer">
+    <app-footer></app-footer>
+  </div>
 </div>

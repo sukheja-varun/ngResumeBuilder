@@ -1,7 +1,7 @@
 .template1-wrapper {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: 40px auto auto auto 40px;
+  grid-template-rows: repeat(5, auto);
   background: yellow;
   .header,
   .footer {
