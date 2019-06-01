@@ -2,33 +2,43 @@
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-template-rows: repeat(5, auto);
-  background: yellow;
   .header,
   .footer {
-    grid-column: span 12;
-    background: cadetblue;
+    grid-column-start: 3;
+    grid-column-end: 11;
+    background: rgb(73, 150, 201);
+  }
+
+  .header {
+    .header-img {
+    height: 300px;
+    display: flex;
+    margin: 10px auto;
+    }
   }
 
   .timeline {
-    grid-column: span 7;
+    grid-column-start: 3;
+    grid-column-end: 8;
     grid-row: 2/5;
-    background: crimson;
+    background: #e6e6e6;
   }
 
   .skills,
   .languages,
   .hobbies {
-    grid-column: span 5;
+    grid-column-start: 8;
+    grid-column-end: 11;
   }
 
   .skills {
-    background: darkorange;
+    background: #e6e6e6;
   }
 
   .languages {
-    background: chartreuse;
+    background: #e6e6e6;
   }
   .hobbies {
-    background: darkblue;
+    background: #e6e6e6;
   }
 }

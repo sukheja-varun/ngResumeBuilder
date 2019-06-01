@@ -1,5 +1,7 @@
 .linear-progress-container {
   text-align: center;
+  display: inline-block;
+  margin: 10px;
   .dot {
     height: 6px;
     width: 6px;
