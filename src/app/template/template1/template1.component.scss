@@ -1,0 +1,44 @@
+.template1-wrapper {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(5, auto);
+  .header,
+  .footer {
+    grid-column-start: 3;
+    grid-column-end: 11;
+    background: rgb(73, 150, 201);
+  }
+
+  .header {
+    .header-img {
+    height: 300px;
+    display: flex;
+    margin: 10px auto;
+    }
+  }
+
+  .timeline {
+    grid-column-start: 3;
+    grid-column-end: 8;
+    grid-row: 2/5;
+    background: #e6e6e6;
+  }
+
+  .skills,
+  .languages,
+  .hobbies {
+    grid-column-start: 8;
+    grid-column-end: 11;
+  }
+
+  .skills {
+    background: #e6e6e6;
+  }
+
+  .languages {
+    background: #e6e6e6;
+  }
+  .hobbies {
+    background: #e6e6e6;
+  }
+}
