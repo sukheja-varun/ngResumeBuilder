@@ -9,7 +9,6 @@ import { HobbyComponent } from './component/hobby/hobby.component';
 import { TimelineComponent } from './component/timeline/timeline.component';
 import { FooterComponent } from './component/footer/footer.component';
 import { Template1Component } from './template/template1/template1.component';
-import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -19,13 +18,11 @@ import { HomeComponent } from './home/home.component';
     HobbyComponent,
     TimelineComponent,
     FooterComponent,
-    Template1Component,
-    HomeComponent
+    Template1Component
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
-  ],
+    AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent]
 })
