@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-personal-form',
@@ -14,15 +14,20 @@ export class PersonalFormComponent implements OnInit {
 
   ngOnInit() {
     this.personalDataForm = new FormGroup({
-      'fullName': new FormControl(null),
-      'title': new FormControl(null),
-      'address': new FormControl(null),
+      'fullName': new FormControl(null, Validators.required),
+      'title': new FormControl(null, Validators.required),
+      'address': new FormControl(null, Validators.required),
+      'email': new FormControl(null, [Validators.required, Validators.email]),
       'mobile': new FormControl(null),
-      'email': new FormControl(null),
       'website': new FormControl(null),
       'linkedIn': new FormControl(null),
       'fb': new FormControl(null),
       'twitter': new FormControl(null),
     });
+  }
+
+  onSubmit() {
+    console.log(this.personalDataForm);
+
   }
 }

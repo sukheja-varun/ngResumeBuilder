@@ -1,8 +1,8 @@
-<form [formGroup]="personalDataForm">
+<form [formGroup]="personalDataForm" (ngSubmit)="onSubmit()">
   <!-- *********** Personal Info *************** -->
   <!-- Name -->
-  <div class="form-group">
-    <label>Full Name</label>
+  <div class="form-group required">
+    <label class="control-label">Full Name</label>
     <input
       class="form-control"
       type="text"
@@ -12,8 +12,8 @@
     />
   </div>
   <!-- Title -->
-  <div class="form-group">
-    <label>Title</label>
+  <div class="form-group" required>
+    <label class="control-label">Title</label>
     <input
       class="form-control"
       type="text"
@@ -23,8 +23,8 @@
     />
   </div>
   <!-- Address -->
-  <div class="form-group">
-    <label>Address</label>
+  <div class="form-group required">
+    <label class="control-label">Address</label>
     <input
       class="form-control"
       type="text"
@@ -35,7 +35,7 @@
   </div>
   <!-- Mobile -->
   <div class="form-group">
-    <label>Mobile</label>
+    <label class="control-label">Mobile</label>
     <input
       class="form-control"
       type="tel"
@@ -45,8 +45,8 @@
     />
   </div>
   <!-- Email -->
-  <div class="form-group">
-    <label>Email</label>
+  <div class="form-group required">
+    <label class="control-label">Email</label>
     <input
       class="form-control"
       type="email"
@@ -57,7 +57,7 @@
   </div>
   <!-- website -->
   <div class="form-group">
-    <label>Website</label>
+    <label class="control-label">Website</label>
     <input
       class="form-control"
       type="url"
@@ -68,7 +68,7 @@
   </div>
   <!-- LinkedIn -->
   <div class="form-group">
-    <label>LinkedIn</label>
+    <label class="control-label">LinkedIn</label>
     <input
       class="form-control"
       type="url"
@@ -79,7 +79,7 @@
   </div>
   <!-- Fb -->
   <div class="form-group">
-    <label>Email</label>
+    <label class="control-label">Facebook</label>
     <input
       class="form-control"
       type="url"
@@ -90,7 +90,7 @@
   </div>
   <!-- Twitter -->
   <div class="form-group">
-    <label>Email</label>
+    <label class="control-label">Twitter</label>
     <input
       class="form-control"
       type="url"
@@ -99,4 +99,6 @@
       id="twitter"
     />
   </div>
+
+  <button type="submit">Submit</button>
 </form>

@@ -1,8 +1,13 @@
 .form-group {
   margin: 1rem 0;
-  label {
+  .control-label {
     display: inline-block;
     margin-bottom: 0.5rem;
+  }
+  &.required .control-label:after {
+    content: "*";
+    color: red;
+    margin-left: 8px;
   }
   .form-control {
     display: block;
@@ -13,5 +18,8 @@
     line-height: 1.5rem;
     border-radius: 0.25rem;
     border: 1px solid #ced4da;
+    &.ng-invalid.ng-touched {
+      border: 1px solid red;
+    }
   }
 }
