@@ -1,0 +1,55 @@
+<h2>Educational/Professional Experience</h2>
+
+<!-- ************* Education  ****************** -->
+<form [formGroup]="experienceDataForm" (ngSubmit)="onSubmit()">
+  <!-- <ng-container *ngFor="let experience of items"> -->
+  <!-- Institute -->
+  <div class="form-group">
+    <label>Institute</label>
+    <input class="form-control" type="text" formControlName="institute" />
+  </div>
+  <!-- Start Year -->
+  <div class="form-group">
+    <label>Start Year</label>
+    <input class="form-control" type="date" formControlName="startDate" />
+  </div>
+  <!-- End Year -->
+  <div class="form-group">
+    <label>End Year</label>
+    <input class="form-control" type="date" formControlName="endDate" />
+  </div>
+  <!-- Short Description -->
+  <div class="form-group">
+    <label>Short Description</label>
+    <input
+      class="form-control"
+      type="text"
+      formControlName="shortDescription"
+    />
+  </div>
+  <!-- </ng-container> -->
+
+  <button type="submit">Submit</button>
+
+  <!-- ************* Experience  ****************** -->
+  <!-- Company -->
+  <!-- <div class="form-group">
+  <label>Company</label>
+  <input class="form-control" type="text" />
+</div> -->
+  <!-- Start Year -->
+  <!-- <div class="form-group">
+  <label>Start Year</label>
+  <input class="form-control" type="date" />
+</div> -->
+  <!-- End Year -->
+  <!-- <div class="form-group">
+  <label>End Year</label>
+  <input class="form-control" type="date" />
+</div> -->
+  <!-- Short Description -->
+  <!-- <div class="form-group">
+  <label>Short Description</label>
+  <input class="form-control" type="text" />
+</div> -->
+</form>
