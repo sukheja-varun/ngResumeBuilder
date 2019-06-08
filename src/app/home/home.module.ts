@@ -7,12 +7,14 @@ import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
 import { PersonalFormComponent } from './components/personal-form/personal-form.component';
 import { ExperienceFormComponent } from './components/experience-form/experience-form.component';
+import { SkillsFormComponent } from './components/skills-form/skills-form.component';
 
 @NgModule({
   declarations: [
     HomeComponent,
     PersonalFormComponent,
-    ExperienceFormComponent
+    ExperienceFormComponent,
+    SkillsFormComponent
   ],
   imports: [
     CommonModule,

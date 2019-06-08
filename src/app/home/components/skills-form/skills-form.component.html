@@ -1,0 +1,71 @@
+<form [formGroup]="extrasForm" (ngSubmit)="onSubmit()">
+  <!-- Skills Data -->
+  <h2>Skills Data</h2>
+  <div formArrayName="skills">
+    <ng-container
+      *ngFor="let skill of extrasForm.get('skills').controls; let i = index"
+    >
+      <div [formGroupName]="i">
+        <!-- Skill -->
+        <div class="form-group">
+          <label>Skill</label>
+          <input class="form-control" type="text" formControlName="name" />
+        </div>
+        <!-- Score -->
+        <div class="form-group">
+          <label>Rating out of 10</label>
+          <input class="form-control" type="number" formControlName="score" />
+        </div>
+        <!-- Color -->
+        <div class="form-group">
+          <label>Color</label>
+          <input class="form-control" type="text" formControlName="color" />
+        </div>
+      </div>
+    </ng-container>
+    <button type="button" (click)="onAddSkill()">Add More Skills</button>
+  </div>
+
+  <!-- Language Data -->
+  <h2>Languages Data</h2>
+  <div formArrayName="languages">
+    <ng-container
+      *ngFor="let skill of extrasForm.get('languages').controls; let i = index"
+    >
+      <div [formGroupName]="i">
+        <!-- Language -->
+        <div class="form-group">
+          <label>Skill</label>
+          <input class="form-control" type="text" formControlName="name" />
+        </div>
+        <!-- Score-->
+        <div class="form-group">
+          <label>Rating out of 10</label>
+          <input class="form-control" type="number" formControlName="score" />
+        </div>
+        <!-- Color -->
+        <div class="form-group">
+          <label>Color</label>
+          <input class="form-control" type="text" formControlName="color" />
+        </div>
+      </div>
+    </ng-container>
+    <button type="button" (click)="onAddSkill()">Add More Languages</button>
+  </div>
+
+  <!-- Hobbies Data -->
+  <h2>Hobbies Data</h2>
+  <div formArrayName="hobbies">
+    <ng-container
+      *ngFor="let hobby of extrasForm.get('hobbies').controls; let i = index"
+    >
+      <!-- Hobby -->
+      <div class="form-group">
+        <label>Hobby</label>
+        <input class="form-control" type="text" [formControlName]="i" />
+      </div>
+    </ng-container>
+    <button type="button" (click)="onAddHobby()">Add More Hobbies</button>
+  </div>
+  <button type="submit">Submit</button>
+</form>
