@@ -2,33 +2,43 @@
 
 <!-- ************* Education  ****************** -->
 <form [formGroup]="experienceDataForm" (ngSubmit)="onSubmit()">
-  <!-- <ng-container *ngFor="let experience of items"> -->
-  <!-- Institute -->
-  <div class="form-group">
-    <label>Institute</label>
-    <input class="form-control" type="text" formControlName="institute" />
+  <div formArrayName="experiences">
+    <ng-container
+      *ngFor="
+        let experience of experienceDataForm.get('experiences').controls;
+        let i = index
+      "
+    >
+      <div [formGroupName]="i">
+        <!-- Institute -->
+        <div class="form-group">
+          <label>Institute</label>
+          <input class="form-control" type="text" formControlName="institute" />
+        </div>
+        <!-- Start Year -->
+        <div class="form-group">
+          <label>Start Year</label>
+          <input class="form-control" type="date" formControlName="startDate" />
+        </div>
+        <!-- End Year -->
+        <div class="form-group">
+          <label>End Year</label>
+          <input class="form-control" type="date" formControlName="endDate" />
+        </div>
+        <!-- Short Description -->
+        <div class="form-group">
+          <label>Short Description</label>
+          <input
+            class="form-control"
+            type="text"
+            formControlName="shortDescription"
+          />
+        </div>
+      </div>
+    </ng-container>
   </div>
-  <!-- Start Year -->
-  <div class="form-group">
-    <label>Start Year</label>
-    <input class="form-control" type="date" formControlName="startDate" />
-  </div>
-  <!-- End Year -->
-  <div class="form-group">
-    <label>End Year</label>
-    <input class="form-control" type="date" formControlName="endDate" />
-  </div>
-  <!-- Short Description -->
-  <div class="form-group">
-    <label>Short Description</label>
-    <input
-      class="form-control"
-      type="text"
-      formControlName="shortDescription"
-    />
-  </div>
-  <!-- </ng-container> -->
 
+  <button (click)="onAddMore()">Add More</button>
   <button type="submit">Submit</button>
 
   <!-- ************* Experience  ****************** -->

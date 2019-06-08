@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { FormGroup, FormControl, Validators, FormArray } from '@angular/forms';
 
 @Component({
   selector: 'app-experience-form',
@@ -10,16 +10,23 @@ export class ExperienceFormComponent implements OnInit {
 
   experienceDataForm: FormGroup;
 
-
   constructor() { }
 
   ngOnInit() {
     this.experienceDataForm = new FormGroup({
+      'experiences': new FormArray([])
+    });
+    this.onAddMore();
+  }
+
+  onAddMore() {
+    const experience = new FormGroup({
       'institute': new FormControl(null, Validators.required),
       'startDate': new FormControl(null, [Validators.required]),
       'endDate': new FormControl(null, [Validators.required]),
       'shortDescription': new FormControl(null, Validators.required)
     });
+    (<FormArray>this.experienceDataForm.get('experiences')).push(experience);
   }
 
   onSubmit() {
