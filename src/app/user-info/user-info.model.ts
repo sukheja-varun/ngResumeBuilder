@@ -1,7 +1,6 @@
 export interface User {
     personalInfo: PersonalInfo;
-    education: Experience[];
-    work: Experience[];
+    experiences: Experience[];
     skills: Skill[];
     hobbies: Hobby[];
     languages: Language[];

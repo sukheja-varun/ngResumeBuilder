@@ -1,6 +1,17 @@
-<!-- Perosnal Form Component -->
-<!-- <app-personal-form></app-personal-form> -->
-<!-- Experience Form Component -->
-<!-- <app-experience-form></app-experience-form> -->
-<!-- Skills/language/hobbies Form Component -->
-<app-skills-form></app-skills-form>
+<span [ngSwitch]="activeFormIndex">
+  <!-- Perosnal Form Component -->
+  <app-personal-form
+    *ngSwitchCase="1"
+    (formSubmit)="onPersonalData($event)"
+  ></app-personal-form>
+  <!-- Experience Form Component -->
+  <app-experience-form
+    *ngSwitchCase="2"
+    (formSubmit)="onExperienceData($event)"
+  ></app-experience-form>
+  <!-- Skills/language/hobbies Form Component -->
+  <app-skills-form
+    *ngSwitchCase="3"
+    (formSubmit)="onSkillsData($event)"
+  ></app-skills-form>
+</span>

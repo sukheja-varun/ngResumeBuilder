@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormArray, FormControl, Validators } from '@angular/forms';
 
 @Component({
@@ -9,6 +9,7 @@ import { FormGroup, FormArray, FormControl, Validators } from '@angular/forms';
 export class SkillsFormComponent implements OnInit {
 
   extrasForm: FormGroup;
+  @Output() formSubmit = new EventEmitter();
 
   constructor() { }
 
@@ -26,29 +27,29 @@ export class SkillsFormComponent implements OnInit {
 
   onAddSkill() {
     const skill = new FormGroup({
-      name: new FormControl('', Validators.required),
-      score: new FormControl('', [Validators.required, Validators.min(1), Validators.max(10)]),
-      color: new FormControl('')
+      name: new FormControl(null, Validators.required),
+      score: new FormControl(null, [Validators.required, Validators.min(1), Validators.max(10)]),
+      color: new FormControl(null)
     });
     (<FormArray>this.extrasForm.get('skills')).push(skill);
   }
 
   onAddLanguage() {
     const language = new FormGroup({
-      name: new FormControl('', Validators.required),
-      score: new FormControl('', [Validators.required, Validators.min(1), Validators.max(10)]),
-      color: new FormControl('')
+      name: new FormControl(null, Validators.required),
+      score: new FormControl(null, [Validators.required, Validators.min(1), Validators.max(10)]),
+      color: new FormControl(null)
     });
     (<FormArray>this.extrasForm.get('languages')).push(language);
   }
 
   onAddHobby() {
-    const hobby = new FormControl('', Validators.required);
+    const hobby = new FormControl(null, Validators.required);
     (<FormArray>this.extrasForm.get('hobbies')).push(hobby);
   }
 
   onSubmit() {
-    console.log(this.extrasForm);
+    this.formSubmit.emit(this.extrasForm.value);
   }
 
 }

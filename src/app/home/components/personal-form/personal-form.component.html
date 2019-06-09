@@ -12,7 +12,7 @@
     />
   </div>
   <!-- Title -->
-  <div class="form-group" required>
+  <div class="form-group required">
     <label class="control-label">Title</label>
     <input
       class="form-control"
@@ -100,5 +100,5 @@
     />
   </div>
 
-  <button type="submit">Submit</button>
+  <button [disabled]="personalDataForm.invalid" type="submit">Submit</button>
 </form>

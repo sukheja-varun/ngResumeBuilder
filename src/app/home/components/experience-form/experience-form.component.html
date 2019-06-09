@@ -38,6 +38,6 @@
     </ng-container>
   </div>
 
-  <button (click)="onAddMore()">Add More</button>
-  <button type="submit">Submit</button>
+  <button type="button" (click)="onAddMore()">Add More</button>
+  <button type="submit" [disabled]="experienceDataForm.invalid">Submit</button>
 </form>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormArray } from '@angular/forms';
 
 @Component({
@@ -9,6 +9,7 @@ import { FormGroup, FormControl, Validators, FormArray } from '@angular/forms';
 export class ExperienceFormComponent implements OnInit {
 
   experienceDataForm: FormGroup;
+  @Output() formSubmit = new EventEmitter();
 
   constructor() { }
 
@@ -30,6 +31,6 @@ export class ExperienceFormComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.experienceDataForm);
+    this.formSubmit.emit(this.experienceDataForm.value);
   }
 }
