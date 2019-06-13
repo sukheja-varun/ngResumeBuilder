@@ -15,17 +15,10 @@
   </div>
   <div class="languages">
     <app-linear-progress-bar
-      *ngFor="
-        let item of [
-          { language: 'English', level: 8 },
-          { language: 'Marathi', level: 2.1 },
-          { language: 'Hindi', level: 9 },
-          { language: 'Sindhi', level: 5 }
-        ]
-      "
-      [text]="item.language"
-      [score]="item.level"
-      color="blue"
+      *ngFor="let item of userData.languages"
+      [text]="item.name"
+      [score]="item.score"
+      [color]="item.color"
     ></app-linear-progress-bar>
   </div>
   <div class="hobbies">
@@ -34,6 +27,6 @@
     <app-hobby [hobby]="'painting'"></app-hobby>
   </div>
   <div class="footer">
-    <app-footer></app-footer>
+    <app-footer [personalInfo]="userData.personalInfo"></app-footer>
   </div>
 </div>

@@ -6,7 +6,7 @@
     display: inline-block;
     margin-bottom: 0.5rem;
   }
-  &.required .control-label:after {
+  &.required label:after {
     content: "*";
     color: red;
     margin-left: 8px;

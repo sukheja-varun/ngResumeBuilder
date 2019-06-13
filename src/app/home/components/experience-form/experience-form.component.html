@@ -11,22 +11,22 @@
     >
       <div [formGroupName]="i">
         <!-- Institute -->
-        <div class="form-group">
+        <div class="form-group required">
           <label>Institute</label>
           <input class="form-control" type="text" formControlName="institute" />
         </div>
         <!-- Start Year -->
-        <div class="form-group">
+        <div class="form-group required">
           <label>Start Year</label>
           <input class="form-control" type="date" formControlName="startDate" />
         </div>
         <!-- End Year -->
-        <div class="form-group">
+        <div class="form-group required">
           <label>End Year</label>
           <input class="form-control" type="date" formControlName="endDate" />
         </div>
         <!-- Short Description -->
-        <div class="form-group">
+        <div class="form-group required">
           <label>Short Description</label>
           <input
             class="form-control"

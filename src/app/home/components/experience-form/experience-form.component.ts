@@ -31,6 +31,6 @@ export class ExperienceFormComponent implements OnInit {
   }
 
   onSubmit() {
-    this.formSubmit.emit(this.experienceDataForm.value);
+    this.formSubmit.emit(this.experienceDataForm.value.experiences);
   }
 }

@@ -9,8 +9,12 @@ import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
 export class LinearProgressBarComponent implements OnInit {
   @Input() score: number = 0;
   @Input() text: string = 'test';
-  @Input() color: string = 'red';
-  
+  filledColor: string = 'red';
+  @Input()
+  set color(color: string) {
+    this.filledColor = color || 'red';
+  }
+
   public totalScore = new Array(10);
 
   constructor() { }
@@ -20,7 +24,7 @@ export class LinearProgressBarComponent implements OnInit {
   }
 
   ngOnChanges(): void {
-    this.score =  Math.floor(this.score);
+    this.score = Math.floor(this.score);
   }
 }
 

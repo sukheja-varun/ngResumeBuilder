@@ -44,9 +44,10 @@ export const dummyUser: User = {
         { name: 'CSS/SCSS', score: 6 },
         { name: 'Typescript', score: 7 }
     ],
-    languages: [{
-        name: 'English', score: 8
-    }],
+    languages: [
+        { name: 'English', score: 8 },
+        { name: 'Spanish', score: 6, color: 'red' }
+    ],
     hobbies: [{
         name: 'Dancing'
     },
