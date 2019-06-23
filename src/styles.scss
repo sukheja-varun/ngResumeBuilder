@@ -5,6 +5,7 @@
   .control-label {
     display: inline-block;
     margin-bottom: 0.5rem;
+    color: #808080;
   }
   &.required label:after {
     content: "*";

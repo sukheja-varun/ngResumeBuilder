@@ -1,5 +1,6 @@
-<form [formGroup]="personalDataForm" (ngSubmit)="onSubmit()">
+<form class="form-alignment" [formGroup]="personalDataForm" (ngSubmit)="onSubmit()">
   <!-- *********** Personal Info *************** -->
+  <h2 class="form-title">Personal Info</h2>
   <!-- Name -->
   <div class="form-group required">
     <label class="control-label">Full Name</label>
@@ -100,5 +101,5 @@
     />
   </div>
 
-  <button [disabled]="personalDataForm.invalid" type="submit">Submit</button>
+  <button class="success-button" [disabled]="personalDataForm.invalid" type="submit">Submit</button>
 </form>
