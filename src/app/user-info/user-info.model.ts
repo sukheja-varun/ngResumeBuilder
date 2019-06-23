@@ -37,6 +37,4 @@ export interface Skill {
     color?: string;
 }
 
-export interface Hobby {
-    name: string;
-}
+export type Hobby = string;

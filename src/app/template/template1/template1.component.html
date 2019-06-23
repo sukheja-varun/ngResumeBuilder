@@ -7,9 +7,9 @@
   </div>
   <div class="skills">
     <app-radial-progress-bar
-      *ngFor="let num of [10, 22, 30, 40]"
-      [text]="num"
-      [score]="num"
+    *ngFor="let skill of userData.skills"
+    [text]="skill.name"
+    [score]="skill.score"
     >
     </app-radial-progress-bar>
   </div>
@@ -22,9 +22,10 @@
     ></app-linear-progress-bar>
   </div>
   <div class="hobbies">
-    <app-hobby [hobby]="'music'"></app-hobby>
-    <app-hobby [hobby]="'dancing'"></app-hobby>
-    <app-hobby [hobby]="'painting'"></app-hobby>
+    <app-hobby
+      *ngFor="let hobby of userData.hobbies"
+      [hobby]="hobby"
+    ></app-hobby>
   </div>
   <div class="footer">
     <app-footer [personalInfo]="userData.personalInfo"></app-footer>

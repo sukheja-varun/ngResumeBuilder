@@ -1,7 +1,7 @@
 <form [formGroup]="extrasForm" (ngSubmit)="onSubmit()">
   <!-- Skills Data -->
   <div class="form-alignment">
-      <h2 class="form-title">Skills Data</h2>
+    <h2 class="form-title">Skills Data</h2>
     <div formArrayName="skills">
       <ng-container
         *ngFor="let skill of extrasForm.get('skills').controls; let i = index"
@@ -14,7 +14,7 @@
           </div>
           <!-- Score -->
           <div class="form-group required">
-            <label>Rating out of 10</label>
+            <label>Rating out of 100</label>
             <input class="form-control" type="number" formControlName="score" />
           </div>
           <!-- Color -->
@@ -24,17 +24,26 @@
           </div>
         </div>
       </ng-container>
-      <button class="add-button" type="button" (click)="onAddSkill()">Add More Skills</button>
+      <button
+        class="add-button"
+        type="button"
+        (click)="onAddSkill()"
+        [disabled]="extrasForm.get('skills').invalid"
+      >
+        Add More Skills
+      </button>
     </div>
   </div>
-
 
   <!-- Language Data -->
   <div class="form-alignment">
     <h2 class="form-title">Languages Data</h2>
     <div formArrayName="languages">
       <ng-container
-        *ngFor="let skill of extrasForm.get('languages').controls; let i = index"
+        *ngFor="
+          let skill of extrasForm.get('languages').controls;
+          let i = index
+        "
       >
         <div [formGroupName]="i">
           <!-- Language -->
@@ -54,7 +63,14 @@
           </div>
         </div>
       </ng-container>
-      <button class="add-button" type="button" (click)="onAddLanguage()">Add More Languages</button>
+      <button
+        class="add-button"
+        type="button"
+        (click)="onAddLanguage()"
+        [disabled]="extrasForm.get('languages').invalid"
+      >
+        Add More Languages
+      </button>
     </div>
   </div>
 
@@ -63,16 +79,38 @@
     <h2 class="form-title">Hobbies Data</h2>
     <div formArrayName="hobbies">
       <ng-container
-        *ngFor="let hobby of extrasForm.get('hobbies').controls; let i = index"
+        *ngFor="
+          let hobbyControl of extrasForm.get('hobbies').controls;
+          let i = index
+        "
       >
-        <!-- Hobby -->
-        <div class="form-group required">
-          <label>Hobby</label>
-          <input class="form-control" type="text" [formControlName]="i" />
-        </div>
+        <ng-container
+          *ngIf="
+            extrasForm.get('hobbies').at(i).value as selectedHobby;
+            else elseTemplate
+          "
+        >
+          <span> {{ selectedHobby }},</span>
+        </ng-container>
+        <ng-template #elseTemplate>
+          <!-- Hobby Dropdown-->
+          <div class="form-group required">
+            <label>Hobby</label>
+            <select
+              class="form-control"
+              [formControlName]="i"
+              (change)="onAddHobby()"
+            >
+              <option *ngFor="let hobby of hobbiesList" [value]="hobby">{{
+                hobby
+              }}</option>
+            </select>
+          </div>
+        </ng-template>
       </ng-container>
-      <button class="add-button" type="button" (click)="onAddHobby()">Add More Hobbies</button>
     </div>
-    <button class="success-button" type="submit" [disabled]="extrasForm.invalid">Submit</button>
+    <button class="success-button" type="submit">
+      Submit
+    </button>
   </div>
 </form>

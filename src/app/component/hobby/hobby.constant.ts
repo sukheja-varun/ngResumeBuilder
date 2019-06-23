@@ -6,7 +6,7 @@ export const hobbies = {
     volunteering: 'https://img.icons8.com/cotton/48/000000/volunteering.png',
     computer: 'https://img.icons8.com/dusk/48/000000/laptop.png',
     gardening: 'https://img.icons8.com/dusk/48/000000/hand-planting.png',
-    animal_care: 'https://img.icons8.com/dusk/48/000000/cat-footprint.png',
+    animalCare: 'https://img.icons8.com/dusk/48/000000/cat-footprint.png',
     reading: 'https://img.icons8.com/office/48/000000/reading.png',
     writing: 'https://img.icons8.com/dusk/48/000000/quill-with-ink.png',
     theater: 'https://img.icons8.com/office/48/000000/theatre-mask.png',
