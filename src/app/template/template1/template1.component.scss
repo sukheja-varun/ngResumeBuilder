@@ -32,7 +32,10 @@
     @include mobile-and-tablet {
       grid-column-start: 1;
       grid-column-end: 12;
-      grid-row: 5/5;
+    }
+    h2 {
+      text-align: center;
+      font-family: fantasy;
     }
   }
 
@@ -44,6 +47,13 @@
     @include mobile-and-tablet {
       grid-column-start: 1;
       grid-column-end: 12;
+      h2 {
+        font-family: fantasy;
+        text-align: center;
+      }
+    }
+    h2 {
+      font-family: fantasy;
     }
   }
 
