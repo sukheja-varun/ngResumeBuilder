@@ -1,4 +1,8 @@
-<div class="template1-wrapper">
+<div>
+  <input type="button" value="CPTURE" (click)="captureScreen()" />
+</div>
+
+<div class="template1-wrapper" id="contentToConvert">
   <div class="header">
     <img class="header-img" src="../../../assets/images/header.png" />
   </div>
@@ -9,9 +13,9 @@
   <div class="skills">
     <h2>Software Skills</h2>
     <app-radial-progress-bar
-    *ngFor="let skill of userData.skills"
-    [text]="skill.name"
-    [score]="skill.score"
+      *ngFor="let skill of userData.skills"
+      [text]="skill.name"
+      [score]="skill.score"
     >
     </app-radial-progress-bar>
   </div>
