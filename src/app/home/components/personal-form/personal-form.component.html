@@ -1,0 +1,105 @@
+<form class="form-alignment" [formGroup]="personalDataForm" (ngSubmit)="onSubmit()">
+  <!-- *********** Personal Info *************** -->
+  <h2 class="form-title">Personal Info</h2>
+  <!-- Name -->
+  <div class="form-group required">
+    <label class="control-label">Full Name</label>
+    <input
+      class="form-control"
+      type="text"
+      formControlName="fullName"
+      name="fullName"
+      id="fullName"
+    />
+  </div>
+  <!-- Title -->
+  <div class="form-group required">
+    <label class="control-label">Title</label>
+    <input
+      class="form-control"
+      type="text"
+      formControlName="title"
+      name="title"
+      id="title"
+    />
+  </div>
+  <!-- Address -->
+  <div class="form-group required">
+    <label class="control-label">Address</label>
+    <input
+      class="form-control"
+      type="text"
+      formControlName="address"
+      name="address"
+      id="address"
+    />
+  </div>
+  <!-- Mobile -->
+  <div class="form-group">
+    <label class="control-label">Mobile</label>
+    <input
+      class="form-control"
+      type="tel"
+      formControlName="mobile"
+      name="mobile"
+      id="monile"
+    />
+  </div>
+  <!-- Email -->
+  <div class="form-group required">
+    <label class="control-label">Email</label>
+    <input
+      class="form-control"
+      type="email"
+      formControlName="email"
+      name="email"
+      id="email"
+    />
+  </div>
+  <!-- website -->
+  <div class="form-group">
+    <label class="control-label">Website</label>
+    <input
+      class="form-control"
+      type="url"
+      formControlName="website"
+      name="website"
+      id="website"
+    />
+  </div>
+  <!-- LinkedIn -->
+  <div class="form-group">
+    <label class="control-label">LinkedIn</label>
+    <input
+      class="form-control"
+      type="url"
+      formControlName="linkedIn"
+      name="linkedin"
+      id="linkedin"
+    />
+  </div>
+  <!-- Fb -->
+  <div class="form-group">
+    <label class="control-label">Facebook</label>
+    <input
+      class="form-control"
+      type="url"
+      formControlName="fb"
+      name="fb"
+      id="fb"
+    />
+  </div>
+  <!-- Twitter -->
+  <div class="form-group">
+    <label class="control-label">Twitter</label>
+    <input
+      class="form-control"
+      type="url"
+      formControlName="twitter"
+      name="twitter"
+      id="twitter"
+    />
+  </div>
+
+  <button class="success-button" [disabled]="personalDataForm.invalid" type="submit">Submit</button>
+</form>

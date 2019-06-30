@@ -22,8 +22,7 @@ import { Template1Component } from './template/template1/template1.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
-  ],
+    AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent]
 })

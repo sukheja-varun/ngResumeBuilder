@@ -1,1 +1,33 @@
 /* You can add global styles to this file, and also import other style files */
+
+body{
+  width: 100%;
+  margin: 0px;
+  .form-group {
+    margin: 1rem 0;
+    .control-label {
+      display: inline-block;
+      margin-bottom: 0.5rem;
+      color: #808080;
+    }
+    &.required label:after {
+      content: "*";
+      color: red;
+      margin-left: 8px;
+    }
+    .form-control {
+      display: block;
+      padding: 0.25rem 0.75rem;
+      width: calc(100% - 1.5rem);
+      height: 2rem;
+      font-size: 1rem;
+      line-height: 1.5rem;
+      border-radius: 0.25rem;
+      border: 1px solid #ced4da;
+      &.ng-invalid.ng-touched {
+        border: 1px solid red;
+      }
+    }
+  }
+}
+

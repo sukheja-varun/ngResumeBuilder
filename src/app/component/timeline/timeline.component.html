@@ -1,15 +1,21 @@
 <!-- The Timeline -->
 
 <ul class="timeline">
-
-  <li *ngFor="let experience of experiences; let even=even, let odd=odd">
-    <div class="direction-r" [ngClass]="{'direction-r':even,'direction-l':odd}">
+  <li *ngFor="let experience of experiences; let even = even; let odd = odd">
+    <div
+      class="direction-r"
+      [ngClass]="{ 'direction-r': even, 'direction-l': odd }"
+    >
       <div class="flag-wrapper">
-        <span class="flag">{{experience.institute}}</span>
-        <span class="time-wrapper"><span class="time">{{experience.startDate}} - {{experience.endDate}}</span></span>
+        <span class="flag">{{ experience.institute }}</span>
+        <span class="time-wrapper">
+          <span class="time">
+            {{ experience.startDate | date: "yyyy" }} -
+            {{ experience.endDate | date: "yyyy" }}
+          </span>
+        </span>
       </div>
-      <div class="desc">{{experience.shortDescription}}</div>
+      <div class="desc">{{ experience.shortDescription }}</div>
     </div>
   </li>
-
 </ul>

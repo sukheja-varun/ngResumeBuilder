@@ -1,7 +1,6 @@
 export interface User {
     personalInfo: PersonalInfo;
-    education: Experience[];
-    work: Experience[];
+    experiences: Experience[];
     skills: Skill[];
     hobbies: Hobby[];
     languages: Language[];
@@ -38,6 +37,4 @@ export interface Skill {
     color?: string;
 }
 
-export interface Hobby {
-    name: string;
-}
+export type Hobby = string;
