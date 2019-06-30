@@ -8,7 +8,7 @@
   <div formArrayName="experiences">
     <ng-container
       *ngFor="
-        let experience of experienceDataForm.get('experiences').controls;
+        let experience of experienceDataForm.get('experiences')['controls'];
         let i = index
       "
     >
