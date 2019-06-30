@@ -1,0 +1,49 @@
+<div class="footer">
+  <div class="footer_container">
+    <div class="clip_art">
+      <img src="../../assets/images/profile.png" />
+    </div>
+    <div class="user_info">
+      <div class="user_info_container">
+        <div class="first_lable">HELLO !</div>
+        <div class="second_lable">I am</div>
+        <div class="third_lable">{{ personalInfo.name }}</div>
+        <div class="forth_lable">{{ personalInfo.title }}</div>
+      </div>
+    </div>
+    <div class="user_details">
+      <div class="user_details_container" *ngIf="personalInfo.address">
+        <img
+          class="user_details_icon"
+          src="https://img.icons8.com/wired/32/000000/home.png"
+        />
+        <div>ADDRESS : &nbsp;</div>
+        <div>{{ personalInfo.address }}</div>
+      </div>
+      <div class="user_details_container" *ngIf="personalInfo.mobile">
+        <img
+          class="user_details_icon"
+          src="https://img.icons8.com/ios/32/000000/google-mobile.png"
+        />
+        <div>MOBILE : &nbsp;</div>
+        <div>{{ personalInfo.mobile }}</div>
+      </div>
+      <div class="user_details_container" *ngIf="personalInfo.email">
+        <img
+          class="user_details_icon"
+          src="https://img.icons8.com/wired/32/000000/email.png"
+        />
+        <div>EMAIL : &nbsp;</div>
+        <div>{{ personalInfo.email }}</div>
+      </div>
+      <div class="user_details_container" *ngIf="personalInfo.website">
+        <img
+          class="user_details_icon"
+          src="https://img.icons8.com/wired/32/000000/web.png"
+        />
+        <div>WEBSITE : &nbsp;</div>
+        <div>{{ personalInfo.website }}</div>
+      </div>
+    </div>
+  </div>
+</div>

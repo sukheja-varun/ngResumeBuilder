@@ -1,0 +1,41 @@
+<div class="capture-headerbar">
+  <img class="capture-headerbar-icon" src="https://img.icons8.com/dusk/48/000000/compact-camera.png" (click)="captureScreen()" />
+</div>
+
+<div class="template1-wrapper" id="contentToConvert">
+  <div class="header">
+    <img class="header-img" src="../../../assets/images/header.png" />
+  </div>
+  <div class="timeline">
+    <h2>Experiences</h2>
+    <app-timeline [experiences]="userData.experiences"></app-timeline>
+  </div>
+  <div class="skills">
+    <h2>Software Skills</h2>
+    <app-radial-progress-bar
+      *ngFor="let skill of userData.skills"
+      [text]="skill.name"
+      [score]="skill.score"
+    >
+    </app-radial-progress-bar>
+  </div>
+  <div class="languages">
+    <h2>Languages</h2>
+    <app-linear-progress-bar
+      *ngFor="let item of userData.languages"
+      [text]="item.name"
+      [score]="item.score"
+      [color]="item.color"
+    ></app-linear-progress-bar>
+  </div>
+  <div class="hobbies">
+    <h2>My Interest</h2>
+    <app-hobby
+      *ngFor="let hobby of userData.hobbies"
+      [hobby]="hobby"
+    ></app-hobby>
+  </div>
+  <div class="footer">
+    <app-footer [personalInfo]="userData.personalInfo"></app-footer>
+  </div>
+</div>

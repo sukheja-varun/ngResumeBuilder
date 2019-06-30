@@ -1,0 +1,41 @@
+.form-alignment{
+    width: 40%;
+    margin: auto;
+    border: 1px solid #f1e8e8;
+    border-radius: 15px;
+    padding: 0% 4% 4% 4%;
+    background-color: #fbf9f9;
+    .form-title{
+        text-align: center;
+        color: #2abffa;
+    }
+    .success-button {
+        background-color: #28a745;
+        border: none;
+        color: white;
+        padding: 8px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        border-radius: 5px;
+        float: right;
+        cursor: pointer;
+      }
+  
+    .add-button {
+        background-color: #007bff;
+        border: none;
+        color: white;
+        padding: 8px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        border-radius: 5px;
+        float: right;
+        cursor: pointer;
+    }
+}

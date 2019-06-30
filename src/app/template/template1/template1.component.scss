@@ -1,0 +1,92 @@
+@import "./../../../assets/sass/variable";
+@import "./../../../assets/sass/mixins";
+
+.capture-headerbar{
+  height: 60px;
+  width: 100%;
+  background-color: rgb(73, 150, 201);
+  background: linear-gradient(to bottom,rgb(73, 150, 201) 0%,transparent 100%);
+  position: fixed;
+  z-index: 900;
+  .capture-headerbar-icon{
+    height: 40px;
+    margin-top: 10px;
+    margin-right: 88px;
+    float: right;
+  }
+  :hover {
+    border: solid 1px #CCC;
+    -moz-box-shadow: 1px 1px 5px #999;
+    -webkit-box-shadow: 1px 1px 5px #999;
+    box-shadow: 1px 1px 5px #999;
+    border-radius: 5px;
+  }
+}
+.template1-wrapper {
+  display: grid;
+  grid-template-columns: repeat(12, auto);
+  grid-template-rows: repeat(5, auto);
+  .header,
+  .footer {
+    grid-column-start: 3;
+    grid-column-end: 11;
+    background: rgb(73, 150, 201);
+    @include mobile-and-tablet {
+      grid-column-start: 1;
+      grid-column-end: 12;
+    }
+  }
+
+  .header {
+    margin-top: 60px;
+    .header-img {
+    height: 300px;
+    display: flex;
+    margin: 10px auto;
+    }
+  }
+
+  .timeline {
+    grid-column-start: 3;
+    grid-column-end: 8;
+    grid-row: 2/5;
+    background: #e6e6e6;
+    @include mobile-and-tablet {
+      grid-column-start: 1;
+      grid-column-end: 12;
+    }
+    h2 {
+      text-align: center;
+      font-family: fantasy;
+    }
+  }
+
+  .skills,
+  .languages,
+  .hobbies {
+    grid-column-start: 8;
+    grid-column-end: 11;
+    @include mobile-and-tablet {
+      grid-column-start: 1;
+      grid-column-end: 12;
+      h2 {
+        font-family: fantasy;
+        text-align: center;
+      }
+    }
+    h2 {
+      font-family: fantasy;
+    }
+  }
+
+  .skills {
+    background: #e6e6e6;
+  }
+
+  .languages {
+    background: #e6e6e6;
+  }
+  .hobbies {
+    background: #e6e6e6;
+  }
+}
