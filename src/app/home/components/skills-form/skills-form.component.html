@@ -4,7 +4,7 @@
     <h2 class="form-title">Skills Data</h2>
     <div formArrayName="skills">
       <ng-container
-        *ngFor="let skill of extrasForm.get('skills').controls; let i = index"
+        *ngFor="let skill of extrasForm.get('skills')['controls']; let i = index"
       >
         <div [formGroupName]="i">
           <!-- Skill -->
@@ -41,7 +41,7 @@
     <div formArrayName="languages">
       <ng-container
         *ngFor="
-          let skill of extrasForm.get('languages').controls;
+          let skill of extrasForm.get('languages')['controls'];
           let i = index
         "
       >
@@ -80,7 +80,7 @@
     <div formArrayName="hobbies">
       <ng-container
         *ngFor="
-          let hobbyControl of extrasForm.get('hobbies').controls;
+          let hobbyControl of extrasForm.get('hobbies')['controls'];
           let i = index
         "
       >
