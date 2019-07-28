@@ -9,6 +9,7 @@ import { HobbyComponent } from './component/hobby/hobby.component';
 import { TimelineComponent } from './component/timeline/timeline.component';
 import { FooterComponent } from './component/footer/footer.component';
 import { Template1Component } from './template/template1/template1.component';
+import { Template2Component } from './template/template2/template2.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { Template1Component } from './template/template1/template1.component';
     HobbyComponent,
     TimelineComponent,
     FooterComponent,
-    Template1Component
+    Template1Component,
+    Template2Component
   ],
   imports: [
     BrowserModule,
