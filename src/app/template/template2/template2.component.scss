@@ -1,5 +1,11 @@
 $dark-background: rgb(0, 35, 61);
 $title-background: rgb(0, 18, 43);
+$orange: orange;
+$green: yellowgreen;
+$red: red;
+$purple: purple;
+$blue: dodgerblue;
+$border: lightgrey;
 
 .template2-container {
   display: grid;
@@ -60,7 +66,7 @@ $title-background: rgb(0, 18, 43);
       }
       .title-text {
         text-transform: uppercase;
-        margin-left: 10px;
+        margin-left: 20px;
         font-weight: bold;
       }
     }
@@ -89,5 +95,125 @@ $title-background: rgb(0, 18, 43);
   }
   .right-col {
     background-color: white;
+    padding-top: 10px;
+    section {
+      display: grid;
+      grid-template-columns: 20px auto;
+      grid-gap: 10px;
+      .title {
+        color: white;
+        writing-mode: vertical-lr;
+        font-size: 20px;
+        background-color: $orange;
+        padding: 10px 0;
+        margin: 15px 0;
+        text-align: center;
+        position: relative;
+        &::after {
+          content: "";
+          position: absolute;
+          top: 100%;
+          width: 0;
+          height: 0;
+          border-top: solid 15px $orange;
+          border-right: solid 20px transparent;
+        }
+        &::before {
+          content: "";
+          position: absolute;
+          bottom: 100%;
+          width: 0;
+          height: 0;
+          border-bottom: solid 15px $orange;
+          border-right: solid 20px transparent;
+        }
+      }
+      .data {
+        border-top: 1px solid $border;
+        margin-right: 20px;
+        padding: 10px;
+      }
+      &:first-child .data {
+        border-top: none;
+      }
+    }
+    .experience .title {
+      background-color: $green;
+      &::before {
+        border-bottom-color: $green;
+      }
+      &::after {
+        border-top-color: $green;
+      }
+    }
+    .skills .title {
+      background-color: $red;
+      &::before {
+        border-bottom-color: $red;
+      }
+      &::after {
+        border-top-color: $red;
+      }
+    }
+    .certificates .title {
+      background-color: $purple;
+      &::before {
+        border-bottom-color: $purple;
+      }
+      &::after {
+        border-top-color: $purple;
+      }
+    }
+    .achivements .title {
+      background-color: $blue;
+      &::before {
+        border-bottom-color: $blue;
+      }
+      &::after {
+        border-top-color: $blue;
+      }
+    }
+
+    .education,
+    .experience,
+    .skills,
+    .achivements .data {
+      .item {
+        display: grid;
+        grid-gap: 10px;
+        grid-template-columns: 1fr 20px 1fr;
+        grid-auto-rows: 30px;
+        // justify-content: right;
+
+        & > div {
+          text-align: center;
+        }
+        // display: flex;
+        // justify-content: center;
+      }
+    }
+    .skills .data {
+      // .item {
+      //     display: flex;
+      //     align-content: center;
+      //   }
+      .skill-rating {
+        display: inline-flex;
+
+        .rating-circle {
+          margin: 0 5px;
+        }
+      }
+    }
+  }
+
+  .rating-circle {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 1px solid black;
+    &.filled {
+      background-color: black;
+    }
   }
 }

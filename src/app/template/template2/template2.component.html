@@ -13,7 +13,7 @@
     </section>
     <section class="contact">
       <div class="title">
-        <img src="../../../assets/template2/icons/contact.svg" alt="" />
+        <img src="https://img.icons8.com/ultraviolet/30/000000/contacts.png" />
         <span class="title-text">Contact</span>
       </div>
       <div class="data">
@@ -45,7 +45,7 @@
     </section>
     <section class="language">
       <div class="title">
-        <img src="../../../assets/template2/icons/language.svg" alt="" />
+        <img src="https://img.icons8.com/ultraviolet/30/000000/talk-male.png" />
         <span class="title-text">Language</span>
       </div>
       <div class="data">
@@ -65,7 +65,9 @@
     </section>
     <section class="hobbies">
       <div class="title">
-        <img src="../../../assets/template2/icons/hobby.svg" alt="" />
+        <img
+          src="https://img.icons8.com/ultraviolet/30/000000/paint-palette.png"
+        />
         <span class="title-text">Hobbies</span>
       </div>
       <div class="data">
@@ -79,35 +81,71 @@
   </div>
   <div class="right-col">
     <section class="education">
-      <div>
-        <span>YYYY-YYYY</span>
-        <span>University, Location</span>
-      </div>
-      <div>
-        <span>YYYY-YYYY</span>
-        <span>University, Location</span>
-      </div>
-      <div>
-        <span>YYYY-YYYY</span>
-        <span>University, Location</span>
+      <div class="title">Education</div>
+      <div class="data">
+        <div class="item" *ngFor="let edu of userData.education">
+          <div>
+            {{ edu.startDate | date: "yyyy" }} -
+            {{ edu.startDate | date: "yyyy" }}
+          </div>
+          <div>
+            <!-- <div></div> -->
+            <div class="rating-circle"></div>
+          </div>
+          <div>{{ edu.institute }}</div>
+        </div>
       </div>
     </section>
     <section class="experience">
-      <div>
-        <span>YYYY-YYYY</span>
-        <span>Company Name</span>
-      </div>
-      <div>
-        <span>YYYY-YYYY</span>
-        <span>Company Name</span>
-      </div>
-      <div>
-        <span>YYYY-YYYY</span>
-        <span>Company Name</span>
+      <div class="title">Experience</div>
+      <div class="data">
+        <div class="item" *ngFor="let exp of userData.experiences">
+          <div>
+            {{ exp.startDate | date: "yyyy" }} -
+            {{ exp.startDate | date: "yyyy" }}
+          </div>
+          <div>
+            <div></div>
+            <div class="rating-circle"></div>
+          </div>
+          <div>{{ exp.institute }}</div>
+        </div>
       </div>
     </section>
-    <section class="skills"></section>
-    <section class="certificates"></section>
-    <section class="achivements"></section>
+    <section class="skills">
+      <div class="title">Skills</div>
+      <div class="data">
+        <div class="item" *ngFor="let skill of userData.skills">
+          <div class="skill-name">{{ skill.name }}</div>
+          <div></div>
+          <div class="skill-rating">
+            <div
+              class="rating-circle"
+              [ngClass]="{ filled: skill.score / 10 > num }"
+              *ngFor="let num of Arr.from(Arr(10).keys())"
+            ></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="certificates">
+      <div class="title">Certificates</div>
+      <div class="data"></div>
+    </section>
+    <section class="achivements">
+      <div class="title">Achivements</div>
+      <div class="data">
+        <div class="item" *ngFor="let award of userData.awards">
+          <div>
+            {{ award.issueDate | date: "yyyy" }}
+          </div>
+          <div>
+            <div></div>
+            <div class="rating-circle"></div>
+          </div>
+          <div>{{ award.title }}</div>
+        </div>
+      </div>
+    </section>
   </div>
 </div>

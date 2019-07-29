@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { User } from 'src/app/user-info/user-info.model';
+import { UserInfoService } from 'src/app/user-info/user-info.service';
 
 @Component({
   selector: 'app-template2',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Template2Component implements OnInit {
 
-  constructor() { }
+  userData: User;
+  Arr = Array;
+
+  constructor(private _userInfoService: UserInfoService) { }
 
   ngOnInit() {
+    this.getUserDetails();
+  }
+
+  getUserDetails() {
+    this.userData = this._userInfoService.getUserData();
   }
 
 }
