@@ -1,6 +1,6 @@
 $dark-background: rgb(0, 35, 61);
 $title-background: rgb(0, 18, 43);
-$orange: orange;
+$orange: darkorange;
 $green: yellowgreen;
 $red: red;
 $purple: purple;
@@ -81,6 +81,9 @@ $border: lightgrey;
     }
     .contact {
       .data {
+        img {
+          height: 15px;
+        }
         .data-text {
           margin-left: 10px;
         }
