@@ -1,11 +1,9 @@
 <div class="template2-container">
+  <div></div>
   <div class="left-col">
     <section class="personal-info">
       <div>
-        <img
-          src="https://media.licdn.com/dms/image/C5103AQF2iahFVb1Z9g/profile-displayphoto-shrink_200_200/0?e=1568851200&v=beta&t=mUJH9Vk7LlYZySPB92jAwwItS5zqerYNjWm0PatnzAc"
-          alt=""
-        />
+        <img src="./assets/images/profile.png" alt="" />
       </div>
       <div class="hello-text">Hello, I am..</div>
       <div class="name">Varun Sukheja</div>
@@ -76,76 +74,110 @@
   <div class="right-col">
     <section class="education">
       <div class="title">Education</div>
-      <div class="data">
-        <div class="item" *ngFor="let edu of userData.education">
-          <div>
-            {{ edu.startDate | date: "yyyy" }} -
-            {{ edu.startDate | date: "yyyy" }}
+      <main>
+        <div class="data">
+          <div class="item" *ngFor="let edu of userData.education">
+            <div>
+              {{ edu.startDate | date: "yyyy" }} -
+              {{ edu.startDate | date: "yyyy" }}
+            </div>
+            <div>
+              <!-- <div></div> -->
+              <div class="rating-circle"></div>
+            </div>
+            <div>{{ edu.institute }}</div>
           </div>
-          <div>
-            <!-- <div></div> -->
-            <div class="rating-circle"></div>
-          </div>
-          <div>{{ edu.institute }}</div>
         </div>
-        <img src="../../../assets/template2/icons/graduation_cap.svg" alt="" />
-      </div>
+        <div class="section-icon ">
+          <img
+            src="../../../assets/template2/icons/graduation_cap.svg"
+            alt=""
+          />
+        </div>
+      </main>
     </section>
     <section class="experience">
       <div class="title">Experience</div>
-      <div class="data">
-        <div class="item" *ngFor="let exp of userData.experiences">
-          <div>
-            {{ exp.startDate | date: "yyyy" }} -
-            {{ exp.startDate | date: "yyyy" }}
+      <main>
+        <div class="data">
+          <div class="item" *ngFor="let exp of userData.experiences">
+            <div>
+              {{ exp.startDate | date: "yyyy" }} -
+              {{ exp.startDate | date: "yyyy" }}
+            </div>
+            <div>
+              <div></div>
+              <div class="rating-circle"></div>
+            </div>
+            <div>{{ exp.institute }}</div>
           </div>
-          <div>
-            <div></div>
-            <div class="rating-circle"></div>
-          </div>
-          <div>{{ exp.institute }}</div>
         </div>
-        <img src="../../../assets/template2/icons/tie.svg" alt="" />
-      </div>
+        <div class="section-icon">
+          <img src="../../../assets/template2/icons/tie.svg" alt="" />
+        </div>
+      </main>
     </section>
     <section class="skills">
       <div class="title">Skills</div>
-      <div class="data">
-        <div class="item" *ngFor="let skill of userData.skills">
-          <div class="skill-name">{{ skill.name }}</div>
-          <div></div>
-          <div class="skill-rating">
-            <div
-              class="rating-circle"
-              [ngClass]="{ filled: skill.score / 10 > num }"
-              *ngFor="let num of Arr.from(Arr(10).keys())"
-            ></div>
+      <main>
+        <div class="data">
+          <div class="item" *ngFor="let skill of userData.skills">
+            <div class="skill-name">{{ skill.name }}</div>
+            <div></div>
+            <div class="skill-rating">
+              <div
+                class="rating-circle"
+                [ngClass]="{ filled: skill.score / 10 > num }"
+                *ngFor="let num of Arr.from(Arr(10).keys())"
+              ></div>
+            </div>
           </div>
         </div>
-        <img src="../../../assets/template2/icons/monitor.svg" alt="" />
-      </div>
+        <div class="section-icon">
+          <img src="../../../assets/template2/icons/monitor.svg" alt="" />
+        </div>
+      </main>
     </section>
     <section class="certificates">
       <div class="title">Certificates</div>
-      <div class="data">
-        <img src="../../../assets/template2/icons/certificate.svg" alt="" />
-      </div>
+      <main>
+        <div class="data">
+          <div class="item" *ngFor="let certificate of userData.certificates">
+            <div>
+              {{ certificate.issueDate }}
+            </div>
+            <div>
+              <!-- <div></div> -->
+              <div class="rating-circle"></div>
+            </div>
+            <div class="skill-name">{{ certificate.title }}</div>
+          </div>
+        </div>
+        <div class="section-icon">
+          <img src="../../../assets/template2/icons/certificate.svg" alt="" />
+        </div>
+      </main>
     </section>
     <section class="achivements">
       <div class="title">Achivements</div>
-      <div class="data">
-        <div class="item" *ngFor="let award of userData.awards">
-          <div>
-            {{ award.issueDate | date: "yyyy" }}
+      <main>
+        <div class="data">
+          <div class="item" *ngFor="let award of userData.awards">
+            <div>
+              {{ award.issueDate | date: "yyyy" }}
+            </div>
+            <div>
+              <div></div>
+              <div class="rating-circle"></div>
+            </div>
+            <div>{{ award.title }}</div>
           </div>
-          <div>
-            <div></div>
-            <div class="rating-circle"></div>
-          </div>
-          <div>{{ award.title }}</div>
         </div>
-        <img src="../../../assets/template2/icons/trophy.svg" alt="" />
-      </div>
+        <div class="section-icon">
+          <img src="../../../assets/template2/icons/trophy.svg" alt="" />
+        </div>
+      </main>
     </section>
   </div>
+  <div></div>
 </div>
