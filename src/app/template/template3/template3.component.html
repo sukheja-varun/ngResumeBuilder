@@ -1,0 +1,46 @@
+<div class="template3-container">
+  <div></div>
+  <!-- Template 3 content starts here -->
+  <div class="template3">
+    <!-- Left Column content starts here -->
+    <div class="left-col">
+      <!-- User Personal Info starts here -->
+      <section class="personal-info">
+        <div class="user-name">{{ userData.personalInfo.name }}</div>
+        <figure class="user-image">
+          <img src="./assets/images/profile.png" alt="" />
+        </figure>
+        <div class="job-title">{{ userData.personalInfo.title }}</div>
+      </section>
+      <!-- User Contact starts here -->
+      <section class="contact">
+        <div class="title">Contact</div>
+        <div class="data">
+          <div class="mobile">
+            <figure>
+              <img src="../../../assets/template3/icons/mobile.svg" alt="" />
+            </figure>
+            <div class="data-text">{{ userData.personalInfo.mobile }}</div>
+          </div>
+          <div class="email">
+            <figure>
+              <img src="../../../assets/template3/icons/mail.svg" alt="" />
+            </figure>
+            <div class="data-text">{{ userData.personalInfo.email }}</div>
+          </div>
+          <div class="address">
+            <figure>
+              <img src="../../../assets/template3/icons/address.svg" alt="" />
+            </figure>
+            <div class="data-text">
+              {{ userData.personalInfo.address }}
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <!-- Left Right content starts here -->
+    <div class="right-col"></div>
+  </div>
+  <div></div>
+</div>

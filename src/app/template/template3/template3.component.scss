@@ -1,0 +1,96 @@
+$grey: rgb(151, 152, 153, 0.5);
+$blue: cornflowerblue;
+
+.template3-container {
+  background: $grey;
+  display: grid;
+  grid-template-columns: auto 1000px auto;
+}
+.template3 {
+  background: white;
+  padding-top: 20px;
+  display: grid;
+  grid-template-columns: 340px 660px;
+}
+.left-col {
+  border-right: 5px dashed $grey;
+  .personal-info {
+    .user-name {
+      background: $blue;
+      color: white;
+      font-size: 50px;
+      text-transform: uppercase;
+      text-align: center;
+      margin-right: 20px;
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        width: 25px;
+        height: 30px;
+        right: 7px;
+        background: royalblue;
+        /* The points are: (left top: x y, right top: x y, center bottom: x y) */
+        clip-path: polygon(0 0, 100% 0, 50% 100%);
+        transform: skew(-25deg, 0deg);
+      }
+    }
+    .user-image {
+      text-align: center;
+      img {
+        max-width: 150px;
+        max-height: 150px;
+      }
+    }
+    .job-title {
+      color: $grey;
+      font-size: 30px;
+      text-transform: uppercase;
+      text-align: center;
+    }
+  }
+  .contact {
+    .title {
+      //   background: skyblue;
+      background: powderblue;
+      color: white;
+      font-size: 50px;
+      text-transform: uppercase;
+      text-align: center;
+      margin-right: 20px;
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        width: 25px;
+        height: 30px;
+        right: 7px;
+        // background: dodgerblue;
+        background: skyblue;
+        /* The points are: (left top: x y, right top: x y, center bottom: x y) */
+        clip-path: polygon(0 0, 100% 0, 50% 100%);
+        transform: skew(-25deg, 0deg);
+      }
+    }
+    .data {
+      .mobile,
+      .email,
+      .address {
+        margin: 0 20px;
+        border-bottom: 5px dashed $grey;
+        padding-bottom: 10px;
+        font-size: 20px;
+        figure,
+        .data-text {
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+.right-col {
+}
