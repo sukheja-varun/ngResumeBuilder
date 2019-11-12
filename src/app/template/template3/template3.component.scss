@@ -1,5 +1,7 @@
+@import "./../../../assets/sass/dotted-border";
+
 $grey: rgb(151, 152, 153, 0.5);
-$blue: cornflowerblue;
+$blue: #4887d7;
 
 .template3-container {
   background: $grey;
@@ -13,10 +15,11 @@ $blue: cornflowerblue;
   grid-template-columns: 340px 660px;
 }
 .left-col {
-  border-right: 5px dashed $grey;
+  /*Vertical dash border*/
+  @include dottedBorder($grey, "vertical", right, 11px, 4px);
   .personal-info {
     .user-name {
-      background: $blue;
+      background: #4887d7;
       color: white;
       font-size: 50px;
       text-transform: uppercase;
@@ -31,7 +34,7 @@ $blue: cornflowerblue;
         width: 25px;
         height: 30px;
         right: 7px;
-        background: royalblue;
+        background: #2060b2;
         /* The points are: (left top: x y, right top: x y, center bottom: x y) */
         clip-path: polygon(0 0, 100% 0, 50% 100%);
         transform: skew(-25deg, 0deg);
@@ -53,8 +56,7 @@ $blue: cornflowerblue;
   }
   .contact {
     .title {
-      //   background: skyblue;
-      background: powderblue;
+      background: #82d0e1;
       color: white;
       font-size: 50px;
       text-transform: uppercase;
@@ -69,8 +71,7 @@ $blue: cornflowerblue;
         width: 25px;
         height: 30px;
         right: 7px;
-        // background: dodgerblue;
-        background: skyblue;
+        background: #57acc0;
         /* The points are: (left top: x y, right top: x y, center bottom: x y) */
         clip-path: polygon(0 0, 100% 0, 50% 100%);
         transform: skew(-25deg, 0deg);
@@ -81,9 +82,11 @@ $blue: cornflowerblue;
       .email,
       .address {
         margin: 0 20px;
-        border-bottom: 5px dashed $grey;
         padding-bottom: 10px;
         font-size: 20px;
+        /* Horizontal dash border */
+        @include dottedBorder($grey, "horizontal", bottom, 11px, 4px);
+
         figure,
         .data-text {
           text-align: center;
@@ -93,4 +96,78 @@ $blue: cornflowerblue;
   }
 }
 .right-col {
+  padding: 0 20px;
+  section {
+    margin-bottom: 20px;
+    .title {
+      border-bottom: 3px solid $grey;
+      margin-bottom: 10px;
+      span {
+        font-size: 40px;
+        padding: 3px 10px;
+        text-transform: uppercase;
+      }
+      img {
+        position: absolute;
+        margin-left: 20px;
+      }
+      .education-text {
+        background: #7abd37;
+        color: white;
+      }
+      .experience-text {
+        background: #ef5a36;
+        color: white;
+      }
+      .skills-text {
+        background: #f4a340;
+        color: white;
+      }
+      .awards-text {
+        background: #303a3e;
+        color: white;
+      }
+      .languages-text {
+        background: #82d0e1;
+        color: white;
+      }
+    }
+    .data {
+      font-size: 22px;
+      .date {
+        background: cadetblue;
+        color: white;
+        padding: 0px 5px;
+        margin-right: 10px;
+      }
+    }
+  }
+
+  .education,
+  .experience {
+    .data div {
+      margin: 10px 0;
+    }
+  }
+
+  .skills .data {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    app-radial-progress-bar {
+      font-size: 16px;
+    }
+  }
+
+  .languages .data .item {
+    display: flex;
+    align-items: center;
+    margin: 10px 0px;
+    font-size: 30px;
+    .language-text {
+      height: 40px;
+      padding: 2px 20px;
+      background: chartreuse;
+    }
+  }
 }

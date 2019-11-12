@@ -1,4 +1,5 @@
 <div class="template3-container">
+  <!-- NOTE: don't delete this empty div -->
   <div></div>
   <!-- Template 3 content starts here -->
   <div class="template3">
@@ -40,7 +41,97 @@
       </section>
     </div>
     <!-- Left Right content starts here -->
-    <div class="right-col"></div>
+    <div class="right-col">
+      <!-- Education section -->
+      <section class="education">
+        <div class="title">
+          <span class="education-text">
+            Education
+          </span>
+          <img src="../../../assets/template3/icons/education.svg" alt="" />
+        </div>
+        <div class="data">
+          <div *ngFor="let edu of userData.education">
+            <span class="date"> {{ edu.startDate }}-{{ edu.endDate }} </span>
+            <span class="institute">
+              {{ edu.institute }}
+            </span>
+          </div>
+        </div>
+      </section>
+      <!-- Experience Section -->
+      <section class="experience">
+        <div class="title">
+          <span class="experience-text">
+            Experience
+          </span>
+          <img src="../../../assets/template3/icons/wrench.svg" alt="" />
+        </div>
+        <div class="data">
+          <div *ngFor="let experience of userData.experiences">
+            <span class="date">
+              {{ experience.startDate }}-{{ experience.endDate }}
+            </span>
+            <span class="institute">
+              {{ experience.institute }}
+            </span>
+          </div>
+        </div>
+      </section>
+      <!-- Skills section -->
+      <section class="skills">
+        <div class="title">
+          <span class="skills-text">
+            Skills
+          </span>
+          <img src="../../../assets/template3/icons/monitor.svg" alt="" />
+        </div>
+        <div class="data">
+          <div class="item" *ngFor="let skill of userData.skills">
+            <app-radial-progress-bar
+              [text]="skill.name"
+              [score]="skill.score"
+            ></app-radial-progress-bar>
+            <span> {{ skill?.score }}%</span>
+          </div>
+        </div>
+      </section>
+      <!-- Awards section -->
+      <section class="awards">
+        <div class="title">
+          <span class="awards-text">
+            Awards
+          </span>
+          <img src="../../../assets/template3/icons/awards.svg" alt="" />
+        </div>
+        <div class="data"></div>
+      </section>
+      <!-- Languages section -->
+      <section class="languages">
+        <div class="title">
+          <span class="languages-text">
+            Languages
+          </span>
+          <img src="../../../assets/template3/icons/speech.svg" alt="" />
+        </div>
+        <div class="data">
+          <div class="item" *ngFor="let item of userData.languages">
+            <div class="language-text">
+              {{ item.name }}
+            </div>
+            <app-linear-progress-bar
+              [score]="item.score"
+              [color]="item.color"
+              [shape]="'bar'"
+              [showEmpty]="false"
+              [styles]="stylesObj"
+            ></app-linear-progress-bar>
+            <div class="score">{{ item.score * 10 }} %</div>
+          </div>
+        </div>
+      </section>
+    </div>
   </div>
+  <!-- NOTE: don't delete this empty div -->
   <div></div>
 </div>
