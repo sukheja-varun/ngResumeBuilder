@@ -25,12 +25,19 @@
   </div>
   <div class="languages">
     <h2>Languages</h2>
-    <app-linear-progress-bar
-      *ngFor="let item of userData.languages"
-      [text]="item.name"
-      [score]="item.score"
-      [color]="item.color"
-    ></app-linear-progress-bar>
+    <div class="data">
+      <div class="item" *ngFor="let item of userData.languages">
+        <div>
+          {{ item.name }}
+        </div>
+        <div>
+          <app-linear-progress-bar
+            [score]="item.score"
+            [color]="item.color"
+          ></app-linear-progress-bar>
+        </div>
+      </div>
+    </div>
   </div>
   <div class="hobbies">
     <h2>My Interest</h2>
