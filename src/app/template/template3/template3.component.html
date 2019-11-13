@@ -51,8 +51,13 @@
           <img src="../../../assets/template3/icons/education.svg" alt="" />
         </div>
         <div class="data">
-          <div *ngFor="let edu of userData.education">
-            <span class="date"> {{ edu.startDate }}-{{ edu.endDate }} </span>
+          <div *ngFor="let edu of userData.education; let index = index">
+            <span
+              class="date"
+              [style.background]="colorList[(index + 1) % colorList.length]"
+            >
+              {{ edu.startDate }}-{{ edu.endDate }}
+            </span>
             <span class="institute">
               {{ edu.institute }}
             </span>
@@ -68,8 +73,13 @@
           <img src="../../../assets/template3/icons/wrench.svg" alt="" />
         </div>
         <div class="data">
-          <div *ngFor="let experience of userData.experiences">
-            <span class="date">
+          <div
+            *ngFor="let experience of userData.experiences; let index = index"
+          >
+            <span
+              class="date"
+              [style.background]="colorList[(index + 2) % colorList.length]"
+            >
               {{ experience.startDate }}-{{ experience.endDate }}
             </span>
             <span class="institute">
@@ -102,9 +112,21 @@
           <span class="awards-text">
             Awards
           </span>
-          <img src="../../../assets/template3/icons/awards.svg" alt="" />
+          <img src="../../../assets/template3/icons/trophy.svg" alt="" />
         </div>
-        <div class="data"></div>
+        <div class="data">
+          <div class="item" *ngFor="let award of userData.awards">
+            <div class="data-icon">
+              <img src="../../../assets/template3/icons/awards.svg" alt="" />
+            </div>
+            <div class="data-text">
+              <div class="data-title">{{ award.title }}</div>
+              <div class="data-short-description">
+                {{ award.shortDescription }}
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
       <!-- Languages section -->
       <section class="languages">
@@ -115,16 +137,22 @@
           <img src="../../../assets/template3/icons/speech.svg" alt="" />
         </div>
         <div class="data">
-          <div class="item" *ngFor="let item of userData.languages">
-            <div class="language-text">
+          <div
+            class="item"
+            *ngFor="let item of userData.languages; let index = index"
+          >
+            <div
+              class="language-text"
+              [style.background]="colorList[index % colorList.length]"
+            >
               {{ item.name }}
             </div>
             <app-linear-progress-bar
               [score]="item.score"
-              [color]="item.color"
+              [color]="colorList[index % colorList.length]"
               [shape]="'bar'"
               [showEmpty]="false"
-              [styles]="stylesObj"
+              [styles]="stylesLinearProgressBar"
             ></app-linear-progress-bar>
             <div class="score">{{ item.score * 10 }} %</div>
           </div>

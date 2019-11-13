@@ -10,7 +10,12 @@ import { UserInfoService } from "src/app/user-info/user-info.service";
 })
 export class Template3Component implements OnInit {
   userData: User;
-  stylesObj: object = { width: "20px", height: "40px", marginRight: "5px" };
+  stylesLinearProgressBar: object = {
+    width: "20px",
+    height: "40px",
+    marginRight: "10px"
+  };
+  colorList = ["#FF653F", "#FFC814", "#28A5FF", "#8BC117", "#81CFE2"];
 
   constructor(private _userInfoService: UserInfoService) {}
 

@@ -155,19 +155,37 @@ $blue: #4887d7;
     flex-wrap: wrap;
     text-align: center;
     app-radial-progress-bar {
+      font-size: 14px;
+    }
+  }
+
+  .awards .data .item {
+    display: flex;
+    .data-text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .data-short-description {
       font-size: 16px;
     }
   }
 
   .languages .data .item {
     display: flex;
-    align-items: center;
     margin: 10px 0px;
-    font-size: 30px;
+    font-size: 22px;
     .language-text {
       height: 40px;
-      padding: 2px 20px;
+      padding: 0px 20px;
+      margin-right: 10px;
       background: chartreuse;
+      color: white;
+      display: flex;
+      align-items: center;
+    }
+    .score {
+      align-self: center;
     }
   }
 }
