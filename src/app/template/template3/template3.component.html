@@ -1,4 +1,12 @@
-<div class="template3-container">
+<div class="capture-headerbar">
+  <img
+    class="capture-headerbar-icon"
+    src="https://img.icons8.com/dusk/48/000000/compact-camera.png"
+    (click)="downloadResume()"
+  />
+</div>
+
+<div class="template3-container" id="contentToConvert">
   <!-- NOTE: don't delete this empty div -->
   <div></div>
   <!-- Template 3 content starts here -->
@@ -52,12 +60,7 @@
         </div>
         <div class="data">
           <div *ngFor="let edu of userData.education; let index = index">
-            <span
-              class="date"
-              [style.background]="colorList[(index + 1) % colorList.length]"
-            >
-              {{ edu.startDate }}-{{ edu.endDate }}
-            </span>
+            <span class="date"> {{ edu.startDate }}-{{ edu.endDate }} </span>
             <span class="institute">
               {{ edu.institute }}
             </span>
@@ -76,10 +79,7 @@
           <div
             *ngFor="let experience of userData.experiences; let index = index"
           >
-            <span
-              class="date"
-              [style.background]="colorList[(index + 2) % colorList.length]"
-            >
+            <span class="date">
               {{ experience.startDate }}-{{ experience.endDate }}
             </span>
             <span class="institute">
