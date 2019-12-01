@@ -28,12 +28,26 @@ export const dummyUser: User = {
             startDate: '2015-06-22',
             endDate: '2016-12-09',
             shortDescription: 'Worked as a Java Backend Developer in Java R&D Team as a Level3 developer.'
-        },
+        }
+    ],
+    education: [
         {
             institute: 'LNCT, Bhopal',
             startDate: '2011-06-01',
             endDate: '2015-05-01',
             shortDescription: 'Completed Honors Degree in Bachelors Of Computer Science with a score of 79.1%'
+        },
+        {
+            institute: 'CKMS (ICSE)',
+            startDate: '2010-04-01',
+            endDate: '2011-03-01',
+            shortDescription: 'Completed Higher Secondary school Certificate with a score of 82% in Maths+science+computers stream.'
+        },
+        {
+            institute: 'CKMS (ICSE)',
+            startDate: '2008-04-01',
+            endDate: '2009-03-01',
+            shortDescription: 'Completed Senior Secondary school Certificate with a score of 76%.'
         },
     ],
     skills: [
@@ -50,5 +64,20 @@ export const dummyUser: User = {
         { name: 'Spanish', score: 6, color: 'darkblue' },
         { name: 'French', score: 4, color: 'lime' }
     ],
-    hobbies: ['dancing', 'writing', 'music']
+    hobbies: ['dancing', 'writing', 'music', 'voluntering'],
+    certificates: [
+        {
+            title: 'Oracle Certified Professional, Java SE 6 Programmer',
+            issueDate: '2013-11-01',
+            issuedBy: 'Oracle University'
+        }
+    ],
+    awards: [
+        {
+            title: 'All Rounder of the Year-2017',
+            issueDate: '2018-01-01',
+            issuedBy: 'ShoppinPal',
+            shortDescription: 'Issued for the overall performance in various sectors.'
+        }
+    ]
 };
