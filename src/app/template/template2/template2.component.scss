@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet');
+
 $dark-background: rgb(0, 35, 61);
 $title-background: rgb(0, 18, 43);
 $orange: darkorange;
@@ -9,6 +11,7 @@ $border: lightgrey;
 $page-background: rgb(151, 152, 153);
 
 .template2-container {
+  font-family: 'Roboto', sans-serif;
   background-color: $page-background;
   display: grid;
   grid-template-columns: auto 432px 648px auto;
