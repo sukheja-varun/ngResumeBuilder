@@ -6,8 +6,8 @@
         <img src="./assets/images/profile.png" alt="" />
       </div>
       <div class="hello-text">Hello, I am..</div>
-      <div class="name">Varun Sukheja</div>
-      <div class="job-title">Tech Lead and Blogger</div>
+      <div class="name">{{ userData.personalInfo.name }}</div>
+      <div class="job-title">{{ userData.personalInfo.title }}</div>
     </section>
     <section class="contact">
       <div class="title">
@@ -17,23 +17,19 @@
       <div class="data">
         <div class="mobile">
           <img src="../../../assets/template2/icons/mobile.svg" alt="" />
-          <span class="data-text">+91 87199119999</span>
+          <span class="data-text">{{ userData.personalInfo.mobile }}</span>
         </div>
         <div class="email">
           <img src="../../../assets/template2/icons/mail.svg" alt="" />
-          <span class="data-text">sukheja.varun@gmail.com</span>
+          <span class="data-text">{{ userData.personalInfo.email }}</span>
         </div>
         <div class="address">
           <img src="../../../assets/template2/icons/address.svg" alt="" />
-          <span class="data-text"
-            >45 Mount Eden Road, Mount Eden, Auckland. Rural addresses: 21
-            Greens Road RD 2 Ruawai 0592. Partial addresses: Main Highway Otaki;
-            32 Wilson Street. Postcodes: 5022.
-          </span>
+          <span class="data-text">{{ userData.personalInfo.address }} </span>
         </div>
         <div class="personal-site">
           <img src="../../../assets/template2/icons/web.svg" alt="" />
-          <span class="data-text">logic24by7.com</span>
+          <span class="data-text">{{ userData.personalInfo.website }}</span>
         </div>
       </div>
     </section>
@@ -43,17 +39,18 @@
         <span class="title-text">Language</span>
       </div>
       <div class="data">
-        <div>
-          <span>Spanish</span>
-          <span>: Basic</span>
-        </div>
-        <div>
-          <span>Portugese</span>
-          <span>: Intermediate</span>
-        </div>
-        <div>
-          <span>Hindi</span>
-          <span>: Advanced</span>
+        <div *ngFor="let lang of userData.languages">
+          <span>{{ lang.name }}</span>
+          <span
+            >:
+            {{
+              lang.score > 7
+                ? "Advanced"
+                : lang.score > 4
+                ? "Intermediate"
+                : "Basic"
+            }}</span
+          >
         </div>
       </div>
     </section>
@@ -63,11 +60,9 @@
         <span class="title-text">Hobbies</span>
       </div>
       <div class="data">
-        <div>Dancing</div>
-        <div>Listening Music</div>
-        <div>Blogging</div>
-        <div>Voluntering</div>
-        <div>Gardening</div>
+        <div *ngFor="let hobby of userData.hobbies">
+          {{ hobby | titlecase }}
+        </div>
       </div>
     </section>
   </div>
