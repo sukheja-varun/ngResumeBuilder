@@ -1,8 +1,10 @@
 <div class="linear-progress-container">
-  <div>{{ text }}</div>
-  <div
-    *ngFor="let range of totalScore; let i = index"
-    class="dot"
-    [ngStyle]="{ 'background-color': score > i ? filledColor : '' }"
-  ></div>
+  <ng-container *ngFor="let range of totalScore; let i = index">
+    <div
+      *ngIf="i < score || showEmpty"
+      [class]="shape"
+      [style.background-color]="score > i ? filledColor : ''"
+      [ngStyle]="styles"
+    ></div>
+  </ng-container>
 </div>

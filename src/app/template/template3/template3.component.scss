@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed:300&display=swap');
+@import "./../../../assets/sass/dotted-border";
+
+$grey: rgb(151, 152, 153, 0.5);
+$blue: #4887d7;
+
+.template3-container {
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  background: $grey;
+  display: grid;
+  grid-template-columns: auto 1000px auto;
+}
+.template3 {
+  background: white;
+  padding-top: 20px;
+  display: grid;
+  grid-template-columns: 340px 660px;
+}
+.left-col {
+  /*Vertical dash border*/
+  @include dottedBorder($grey, "vertical", right, 11px, 4px);
+  .personal-info {
+    .user-name {
+      background: #4887d7;
+      color: white;
+      font-size: 50px;
+      text-transform: uppercase;
+      text-align: center;
+      margin-right: 20px;
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        width: 25px;
+        height: 30px;
+        right: 7px;
+        background: #2060b2;
+        /* The points are: (left top: x y, right top: x y, center bottom: x y) */
+        clip-path: polygon(0 0, 100% 0, 50% 100%);
+        transform: skew(-25deg, 0deg);
+      }
+    }
+    .user-image {
+      text-align: center;
+      img {
+        max-width: 150px;
+        max-height: 150px;
+      }
+    }
+    .job-title {
+      color: $grey;
+      font-size: 30px;
+      text-transform: uppercase;
+      text-align: center;
+    }
+  }
+  .contact {
+    .title {
+      background: #82d0e1;
+      color: white;
+      font-size: 50px;
+      text-transform: uppercase;
+      text-align: center;
+      margin-right: 20px;
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        width: 25px;
+        height: 30px;
+        right: 7px;
+        background: #57acc0;
+        /* The points are: (left top: x y, right top: x y, center bottom: x y) */
+        clip-path: polygon(0 0, 100% 0, 50% 100%);
+        transform: skew(-25deg, 0deg);
+      }
+    }
+    .data {
+      .mobile,
+      .email,
+      .address {
+        margin: 0 20px;
+        padding-bottom: 10px;
+        font-size: 20px;
+        /* Horizontal dash border */
+        @include dottedBorder($grey, "horizontal", bottom, 11px, 4px);
+
+        figure,
+        .data-text {
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+.right-col {
+  padding: 0 20px;
+  section {
+    margin-bottom: 20px;
+    .title {
+      border-bottom: 3px solid $grey;
+      margin-bottom: 10px;
+      span {
+        font-size: 40px;
+        padding: 3px 10px;
+        text-transform: uppercase;
+      }
+      img {
+        position: relative;
+        top:5px;
+        margin-left: 20px;
+      }
+      .education-text {
+        background: #7abd37;
+        color: white;
+      }
+      .experience-text {
+        background: #ef5a36;
+        color: white;
+      }
+      .skills-text {
+        background: #f4a340;
+        color: white;
+      }
+      .awards-text {
+        background: #303a3e;
+        color: white;
+      }
+      .languages-text {
+        background: #82d0e1;
+        color: white;
+      }
+    }
+    .data {
+      font-size: 22px;
+      .date {
+        background: darkgrey;
+        color: white;
+        padding: 0px 5px;
+        margin-right: 10px;
+      }
+    }
+  }
+
+  .education,
+  .experience {
+    .data div {
+      margin: 10px 0;
+    }
+  }
+
+  .skills .data {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    app-radial-progress-bar {
+      font-size: 14px;
+    }
+  }
+
+  .awards .data .item {
+    display: flex;
+    .data-text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .data-short-description {
+      font-size: 16px;
+    }
+  }
+
+  .languages .data .item {
+    display: flex;
+    margin: 10px 0px;
+    font-size: 22px;
+    .language-text {
+      height: 40px;
+      padding: 0px 20px;
+      margin-right: 10px;
+      background: chartreuse;
+      color: white;
+      display: flex;
+      align-items: center;
+    }
+    .score {
+      align-self: center;
+    }
+  }
+}

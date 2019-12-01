@@ -4,6 +4,7 @@ import htmlToImage from 'html-to-image';
 
 import { User } from 'src/app/user-info/user-info.model';
 import { UserInfoService } from 'src/app/user-info/user-info.service';
+import { UtilityService } from 'src/app/utility.service';
 
 @Component({
   selector: 'app-template1',
@@ -15,7 +16,10 @@ export class Template1Component implements OnInit {
 
   userData: User;
 
-  constructor(private _userInfoService: UserInfoService) { }
+  constructor(
+    private _userInfoService: UserInfoService,
+    private _utilityService: UtilityService
+  ) { }
 
   ngOnInit() {
     this.getUserDetails();
@@ -28,15 +32,8 @@ export class Template1Component implements OnInit {
   }
 
   public captureScreen() {
-    var node = document.getElementById('contentToConvert');
-    htmlToImage.toPng(node)
-      .then(function (dataUrl) {
-        var link = document.createElement('a');
-        link.download = 'resume.png';
-        link.href = dataUrl;
-        link.click();
-      });
-
+    let node = document.getElementById('contentToConvert');
+    this._utilityService.captureScreen(node);
   }
 
 }

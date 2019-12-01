@@ -1,13 +1,21 @@
+$size: 10px;
+$default-color: #bbb;
+
 .linear-progress-container {
-  text-align: center;
-  display: inline-block;
-  margin: 10px;
-  .dot {
-    height: 6px;
-    width: 6px;
-    background-color: #bbb;
-    border-radius: 50%;
+  // text-align: center;
+  // display: inline-block;
+  // margin: 10px;
+  div {
+    width: $size;
+    background-color: $default-color;
     display: inline-block;
     margin-left: 2px;
+  }
+  .dot {
+    height: $size;
+    border-radius: 50%;
+  }
+  .bar {
+    height: $size * 5;
   }
 }

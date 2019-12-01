@@ -1,0 +1,165 @@
+<div class="capture-headerbar">
+  <img
+    class="capture-headerbar-icon"
+    src="https://img.icons8.com/dusk/48/000000/compact-camera.png"
+    (click)="downloadResume()"
+  />
+</div>
+
+<div class="template3-container" id="contentToConvert">
+  <!-- NOTE: don't delete this empty div -->
+  <div></div>
+  <!-- Template 3 content starts here -->
+  <div class="template3">
+    <!-- Left Column content starts here -->
+    <div class="left-col">
+      <!-- User Personal Info starts here -->
+      <section class="personal-info">
+        <div class="user-name">{{ userData.personalInfo.name }}</div>
+        <figure class="user-image">
+          <img src="./assets/images/profile.png" alt="" />
+        </figure>
+        <div class="job-title">{{ userData.personalInfo.title }}</div>
+      </section>
+      <!-- User Contact starts here -->
+      <section class="contact">
+        <div class="title">Contact</div>
+        <div class="data">
+          <div class="mobile">
+            <figure>
+              <img src="../../../assets/template3/icons/mobile.svg" alt="" />
+            </figure>
+            <div class="data-text">{{ userData.personalInfo.mobile }}</div>
+          </div>
+          <div class="email">
+            <figure>
+              <img src="../../../assets/template3/icons/mail.svg" alt="" />
+            </figure>
+            <div class="data-text">{{ userData.personalInfo.email }}</div>
+          </div>
+          <div class="address">
+            <figure>
+              <img src="../../../assets/template3/icons/address.svg" alt="" />
+            </figure>
+            <div class="data-text">
+              {{ userData.personalInfo.address }}
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <!-- Left Right content starts here -->
+    <div class="right-col">
+      <!-- Education section -->
+      <section class="education">
+        <div class="title">
+          <span class="education-text">
+            Education
+          </span>
+          <img src="../../../assets/template3/icons/education.svg" alt="" />
+        </div>
+        <div class="data">
+          <div *ngFor="let edu of userData.education; let index = index">
+            <span class="date"> {{ edu.startDate }}-{{ edu.endDate }} </span>
+            <span class="institute">
+              {{ edu.institute }}
+            </span>
+          </div>
+        </div>
+      </section>
+      <!-- Experience Section -->
+      <section class="experience">
+        <div class="title">
+          <span class="experience-text">
+            Experience
+          </span>
+          <img src="../../../assets/template3/icons/wrench.svg" alt="" />
+        </div>
+        <div class="data">
+          <div
+            *ngFor="let experience of userData.experiences; let index = index"
+          >
+            <span class="date">
+              {{ experience.startDate }}-{{ experience.endDate }}
+            </span>
+            <span class="institute">
+              {{ experience.institute }}
+            </span>
+          </div>
+        </div>
+      </section>
+      <!-- Skills section -->
+      <section class="skills">
+        <div class="title">
+          <span class="skills-text">
+            Skills
+          </span>
+          <img src="../../../assets/template3/icons/monitor.svg" alt="" />
+        </div>
+        <div class="data">
+          <div class="item" *ngFor="let skill of userData.skills">
+            <app-radial-progress-bar
+              [text]="skill.name"
+              [score]="skill.score"
+            ></app-radial-progress-bar>
+            <span> {{ skill?.score }}%</span>
+          </div>
+        </div>
+      </section>
+      <!-- Awards section -->
+      <section class="awards">
+        <div class="title">
+          <span class="awards-text">
+            Awards
+          </span>
+          <img src="../../../assets/template3/icons/trophy.svg" alt="" />
+        </div>
+        <div class="data">
+          <div class="item" *ngFor="let award of userData.awards">
+            <div class="data-icon">
+              <img src="../../../assets/template3/icons/awards.svg" alt="" />
+            </div>
+            <div class="data-text">
+              <div class="data-title">{{ award.title }}</div>
+              <div class="data-short-description">
+                {{ award.shortDescription }}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Languages section -->
+      <section class="languages">
+        <div class="title">
+          <span class="languages-text">
+            Languages
+          </span>
+          <img src="../../../assets/template3/icons/speech.svg" alt="" />
+        </div>
+        <div class="data">
+          <div
+            class="item"
+            *ngFor="let item of userData.languages; let index = index"
+          >
+            <div
+              class="language-text"
+              [style.background]="colorList[index % colorList.length]"
+            >
+              {{ item.name }}
+            </div>
+            <app-linear-progress-bar
+              [score]="item.score"
+              [color]="colorList[index % colorList.length]"
+              [shape]="'bar'"
+              [showEmpty]="false"
+              [styles]="stylesLinearProgressBar"
+            ></app-linear-progress-bar>
+            <div class="score">{{ item.score * 10 }} %</div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+  <!-- NOTE: don't delete this empty div -->
+  <div></div>
+</div>
