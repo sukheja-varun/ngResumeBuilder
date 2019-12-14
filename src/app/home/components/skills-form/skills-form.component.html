@@ -2,9 +2,13 @@
   <!-- Skills Data -->
   <div class="form-alignment">
     <h2 class="form-title">Skills Data</h2>
+
     <div formArrayName="skills">
       <ng-container
-        *ngFor="let skill of extrasForm.get('skills')['controls']; let i = index"
+        *ngFor="
+          let skill of extrasForm.get('skills')['controls'];
+          let i = index
+        "
       >
         <div [formGroupName]="i">
           <!-- Skill -->
@@ -23,7 +27,19 @@
             <input class="form-control" type="text" formControlName="color" />
           </div>
         </div>
+
+        <!-- Divider with option to delete -->
+        <h2
+          class="divider line glow"
+          *ngIf="extrasForm.get('skills')['controls'].length > 1"
+        >
+          <span class="pointer" (click)="onDelete(i, 'skills')"
+            >Click to delete</span
+          >
+        </h2>
       </ng-container>
+
+      <!-- Add more button -->
       <button
         class="add-button"
         type="button"
@@ -62,7 +78,19 @@
             <input class="form-control" type="text" formControlName="color" />
           </div>
         </div>
+
+        <!-- Divider with option to delete -->
+        <h2
+          class="divider line glow"
+          *ngIf="extrasForm.get('languages')['controls'].length > 1"
+        >
+          <span class="pointer" (click)="onDelete(i, 'languages')"
+            >Click to delete</span
+          >
+        </h2>
       </ng-container>
+
+      <!-- Add more button -->
       <button
         class="add-button"
         type="button"
@@ -84,16 +112,24 @@
           let i = index
         "
       >
+        <!-- Selected hobbies as chips -->
         <ng-container
           *ngIf="
             extrasForm.get('hobbies').at(i).value as selectedHobby;
             else elseTemplate
           "
         >
-          <span> {{ selectedHobby }},</span>
+          <div class="chip">
+            <span>{{ selectedHobby }}</span>
+            <button
+              type="button"
+              (click)="onDelete(i, 'hobbies')"
+              class="chip-remove"
+            ></button>
+          </div>
         </ng-container>
+        <!--  Select Hobby Dropdown-->
         <ng-template #elseTemplate>
-          <!-- Hobby Dropdown-->
           <div class="form-group required">
             <label>Hobby</label>
             <select
@@ -109,6 +145,8 @@
         </ng-template>
       </ng-container>
     </div>
+
+    <!-- Submit button -->
     <button class="success-button" type="submit">
       Submit
     </button>

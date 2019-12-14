@@ -38,6 +38,12 @@
           />
         </div>
       </div>
+      <h2
+        class="divider line glow"
+        *ngIf="experienceDataForm.get('experiences')['controls'].length > 1"
+      >
+        <span class="pointer" (click)="onDelete(i)">Click to delete</span>
+      </h2>
     </ng-container>
   </div>
   <!-- Add New Experience Button -->

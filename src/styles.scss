@@ -1,6 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 
-body{
+body {
   width: 100%;
   margin: 0px;
   .form-group {
@@ -31,3 +31,54 @@ body{
   }
 }
 
+// Pointer Cursor
+.pointer {
+  cursor: pointer;
+}
+
+// disabled button
+button:disabled{
+  // background: grey !important;
+  opacity: 0.4;
+}
+
+// Divider CSS
+
+.divider {
+  display: flex;
+
+  &:before,
+  &:after {
+    content: "";
+    flex: 1;
+  }
+}
+
+// Base line
+.line {
+  align-items: center;
+  margin: 1em -1em;
+
+  &:before,
+  &:after {
+    height: 1px;
+    margin: 0 1em;
+  }
+}
+
+.glow {
+  &:before,
+  &:after {
+    height: 6px;
+    -webkit-filter: blur(1px);
+    border-radius: 5px;
+  }
+
+  &:before {
+    background: linear-gradient(to right, blue, red);
+  }
+
+  &:after {
+    background: linear-gradient(to left, blue, green);
+  }
+}

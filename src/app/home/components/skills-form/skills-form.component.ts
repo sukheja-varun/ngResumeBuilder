@@ -51,6 +51,10 @@ export class SkillsFormComponent implements OnInit {
     (<FormArray>this.extrasForm.get('hobbies')).push(hobby);
   }
 
+  onDelete(index: number, identifier: string) {
+    (<FormArray>this.extrasForm.get(identifier)).removeAt(index);
+  }
+
   onSubmit() {
     this.formSubmit.emit(this.extrasForm.value);
   }

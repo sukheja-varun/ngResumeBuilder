@@ -30,6 +30,10 @@ export class ExperienceFormComponent implements OnInit {
     (<FormArray>this.experienceDataForm.get('experiences')).push(experience);
   }
 
+  onDelete(index: number) {
+    (<FormArray>this.experienceDataForm.get('experiences')).removeAt(index);
+  }
+
   onSubmit() {
     this.formSubmit.emit(this.experienceDataForm.value.experiences);
   }
