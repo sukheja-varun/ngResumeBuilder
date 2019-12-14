@@ -13,8 +13,10 @@ export class HomeComponent implements OnInit {
 
   activeFormIndex = 1;
 
-  constructor(private userInfoService: UserInfoService,
-    private router: Router) { }
+  constructor(
+    private userInfoService: UserInfoService,
+    private router: Router
+  ) { }
 
   ngOnInit() {
 
