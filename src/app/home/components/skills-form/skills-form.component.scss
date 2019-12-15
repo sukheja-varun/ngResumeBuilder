@@ -1,52 +1,54 @@
-.form-alignment{
-    width: 40%;
-    margin: 15px auto;
-    border: 1px solid #f1e8e8;
-    border-radius: 15px;
-    padding: 0% 4% 4% 4%;
-    background-color: #fbf9f9;
-    .form-title{
-        text-align: center;
-        color: #2abffa;
-    }
-    .success-button {
-      background-color: #28a745;
-      border: none;
-      color: white;
-      padding: 8px;
-      text-align: center;
-      text-decoration: none;
-      display: inline-block;
-      font-size: 16px;
-      margin: 4px 2px;
-      border-radius: 5px;
-      float: right;
-      cursor: pointer;
-    }
+.form-alignment {
+  width: 40%;
+  margin: 15px auto;
+  border: 1px solid #f1e8e8;
+  border-radius: 15px;
+  padding: 0% 4% 4% 4%;
+  background-color: #fbf9f9;
+  .form-title {
+    text-align: center;
+    color: #2abffa;
+  }
+  .success-button {
+    background-color: #28a745;
+    border: none;
+    color: white;
+    padding: 8px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    border-radius: 5px;
+    float: right;
+    cursor: pointer;
+  }
 
-    .add-button {
-        background-color: #007bff;
-        border: none;
-        color: white;
-        padding: 8px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 16px;
-        margin: 4px 2px;
-        border-radius: 5px;
-        float: right;
-        cursor: pointer;
-    }
+  .add-button {
+    background-color: #007bff;
+    border: none;
+    color: white;
+    padding: 8px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    border-radius: 5px;
+    float: right;
+    cursor: pointer;
+  }
 }
 //  SCSS for chips
 $chip-height: 32px;
 $chip-color: #e0e0e0;
+$chip-cross-color: red;
 
 .chip {
   display: inline-block;
   background: $chip-color;
   padding: 0 12px;
+  margin-right: 10px;
   border-radius: 32px;
   font-size: 13px;
   height: $chip-height;
@@ -69,8 +71,10 @@ $chip-color: #e0e0e0;
   font: inherit;
   line-height: 20px;
   &:after {
-    color: $chip-color;
+    color: $chip-cross-color;
     content: "x";
+    line-height: 0;
+    font-size: 16px;
   }
   &:hover {
     background: #999;

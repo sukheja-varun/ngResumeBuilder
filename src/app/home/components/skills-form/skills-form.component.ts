@@ -35,7 +35,7 @@ export class SkillsFormComponent implements OnInit {
 
     this.skills.length > 0 ? this.setCacheSkills() : this.onAddSkill();
     this.languages.length > 0 ? this.setCacheLanguages() : this.onAddLanguage();
-    this.hobbies.length > 0 ? this.setCacheHobbies() : this.onAddHobby();
+    this.hobbies.length > 0 ? this.setCacheHobbies() : null;
   }
 
   setCacheSkills() {

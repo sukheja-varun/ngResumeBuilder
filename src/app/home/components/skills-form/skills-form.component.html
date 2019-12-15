@@ -106,48 +106,46 @@
   <div class="form-alignment">
     <h2 class="form-title">Hobbies Data</h2>
     <div formArrayName="hobbies">
+      <!-- Selected hobbies as chips -->
       <ng-container
         *ngFor="
           let hobbyControl of extrasForm.get('hobbies')['controls'];
           let i = index
         "
       >
-        <!-- Selected hobbies as chips -->
-        <ng-container
+        <!-- <ng-container
           *ngIf="
             extrasForm.get('hobbies').at(i).value as selectedHobby;
             else elseTemplate
           "
-        >
-          <div class="chip">
-            <span>{{ selectedHobby }}</span>
-            <button
-              type="button"
-              (click)="onDelete(i, 'hobbies')"
-              class="chip-remove"
-            ></button>
-          </div>
-        </ng-container>
-        <!--  Select Hobby Dropdown-->
-        <ng-template #elseTemplate>
-          <div class="form-group required">
-            <label>Hobby</label>
-            <select
-              class="form-control"
-              [formControlName]="i"
-              (change)="onAddHobby()"
-            >
-              <option *ngFor="let hobby of hobbiesList" [value]="hobby">{{
-                hobby
-              }}</option>
-            </select>
-          </div>
-        </ng-template>
+        > -->
+        <div class="chip">
+          <span>{{ hobbyControl.value }}</span>
+          <button
+            type="button"
+            (click)="onDelete(i, 'hobbies')"
+            class="chip-remove"
+          ></button>
+        </div>
       </ng-container>
+      <!--  Select Hobby Dropdown-->
+      <div class="form-group required">
+        <label>Hobby</label>
+        <select
+          class="form-control"
+          (change)="onAddHobby(hobbySelect.value)"
+          #hobbySelect
+        >
+          <option *ngFor="let hobby of hobbiesList" [value]="hobby">{{
+            hobby
+          }}</option>
+        </select>
+      </div>
     </div>
 
     <!-- Submit button -->
-    <button class="success-button" type="submit">
+    <button class="success-button" type="submit"
+    [disabled]="extrasForm.invalid">
       Submit
     </button>
   </div>
