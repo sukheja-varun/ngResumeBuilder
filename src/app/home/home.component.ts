@@ -15,7 +15,7 @@ export class HomeComponent implements OnInit {
   user: User = {
     awards: [],
     certificates: [],
-    education: [],
+    educations: [],
     experiences: [],
     hobbies: [],
     languages: [],
@@ -35,28 +35,23 @@ export class HomeComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-
   }
 
   onPersonalData(personalData: PersonalInfo) {
-    // this.userInfoService.setPersonalInfo(personalData);
     this.user.personalInfo = personalData;
     this.activeFormIndex = 2;
   }
 
-  onExperienceData(experiences: Experience[]) {
-    // this.userInfoService.setExperiences(experiences);
-    this.user.experiences = experiences;
+  onExperienceData(data) {
+    this.user.experiences = data.experiences;
+    this.user.educations = data.educations;
     this.activeFormIndex = 3;
   }
   onSkillsData(data) {
-    // this.userInfoService.setSkills(data.skills);
-    // this.userInfoService.setLanguages(data.languages);
-    // this.userInfoService.setHobbies(data.hobbies);
     this.user.skills = data.skills;
     this.user.languages = data.languages;
     this.user.hobbies = data.hobbies;
     this.userInfoService.setUserData(this.user);
-    this.activeFormIndex = 4;
+    this.router.navigate(['/templates']);
   }
 }

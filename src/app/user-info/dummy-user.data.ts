@@ -30,7 +30,7 @@ export const dummyUser: User = {
             shortDescription: 'Worked as a Java Backend Developer in Java R&D Team as a Level3 developer.'
         }
     ],
-    education: [
+    educations: [
         {
             institute: 'LNCT, Bhopal',
             startDate: '2011-06-01',

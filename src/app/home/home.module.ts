@@ -8,7 +8,6 @@ import { HomeComponent } from './home.component';
 import { PersonalFormComponent } from './components/personal-form/personal-form.component';
 import { ExperienceFormComponent } from './components/experience-form/experience-form.component';
 import { SkillsFormComponent } from './components/skills-form/skills-form.component';
-import { TemplateSelectorComponent } from './components/template-selector/template-selector.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +15,6 @@ import { TemplateSelectorComponent } from './components/template-selector/templa
     PersonalFormComponent,
     ExperienceFormComponent,
     SkillsFormComponent,
-    TemplateSelectorComponent
   ],
   imports: [
     CommonModule,

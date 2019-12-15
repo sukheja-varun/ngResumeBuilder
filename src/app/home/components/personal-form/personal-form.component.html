@@ -1,4 +1,8 @@
-<form class="form-alignment" [formGroup]="personalDataForm" (ngSubmit)="onSubmit()">
+<form
+  class="form-alignment"
+  [formGroup]="personalDataForm"
+  (ngSubmit)="onSubmit()"
+>
   <!-- *********** Personal Info *************** -->
   <h2 class="form-title">Personal Info</h2>
   <!-- Name -->
@@ -7,9 +11,9 @@
     <input
       class="form-control"
       type="text"
-      formControlName="fullName"
-      name="fullName"
-      id="fullName"
+      formControlName="name"
+      name="name"
+      id="name"
     />
   </div>
   <!-- Title -->
@@ -101,5 +105,11 @@
     />
   </div>
 
-  <button class="success-button" [disabled]="personalDataForm.invalid" type="submit">Submit</button>
+  <button
+    class="success-button"
+    [disabled]="personalDataForm.invalid"
+    type="submit"
+  >
+    Submit
+  </button>
 </form>

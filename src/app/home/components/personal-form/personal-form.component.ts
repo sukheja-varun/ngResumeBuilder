@@ -22,7 +22,7 @@ export class PersonalFormComponent implements OnInit {
 
   ngOnInit() {
     this.personalDataForm = new FormGroup({
-      'fullName': new FormControl(get(this.personalInfo, 'fullName', null), Validators.required),
+      'name': new FormControl(get(this.personalInfo, 'name', null), Validators.required),
       'title': new FormControl(get(this.personalInfo, 'title', null), Validators.required),
       'address': new FormControl(get(this.personalInfo, 'address', null), Validators.required),
       'email': new FormControl(get(this.personalInfo, 'email', null), [Validators.required, Validators.email]),

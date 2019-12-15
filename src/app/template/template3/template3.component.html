@@ -48,10 +48,13 @@
         </div>
       </section>
     </div>
-    <!-- Left Right content starts here -->
+    <!-- Right Column content starts here -->
     <div class="right-col">
       <!-- Education section -->
-      <section class="education">
+      <section
+        class="education"
+        *ngIf="userData.educations && userData.educations.length"
+      >
         <div class="title">
           <span class="education-text">
             Education
@@ -59,7 +62,7 @@
           <img src="../../../assets/template3/icons/education.svg" alt="" />
         </div>
         <div class="data">
-          <div *ngFor="let edu of userData.education; let index = index">
+          <div *ngFor="let edu of userData.educations; let index = index">
             <span class="date"> {{ edu.startDate }}-{{ edu.endDate }} </span>
             <span class="institute">
               {{ edu.institute }}
@@ -68,7 +71,10 @@
         </div>
       </section>
       <!-- Experience Section -->
-      <section class="experience">
+      <section
+        class="experience"
+        *ngIf="userData.experiences && userData.experiences.length"
+      >
         <div class="title">
           <span class="experience-text">
             Experience
@@ -89,7 +95,7 @@
         </div>
       </section>
       <!-- Skills section -->
-      <section class="skills">
+      <section class="skills" *ngIf="userData.skills && userData.skills.length">
         <div class="title">
           <span class="skills-text">
             Skills
@@ -107,7 +113,7 @@
         </div>
       </section>
       <!-- Awards section -->
-      <section class="awards">
+      <section class="awards" *ngIf="userData.awards && userData.awards.length">
         <div class="title">
           <span class="awards-text">
             Awards
@@ -129,7 +135,10 @@
         </div>
       </section>
       <!-- Languages section -->
-      <section class="languages">
+      <section
+        class="languages"
+        *ngIf="userData.languages && userData.languages.length"
+      >
         <div class="title">
           <span class="languages-text">
             Languages
