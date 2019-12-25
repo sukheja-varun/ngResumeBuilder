@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed:300&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed:300&display=swap");
 @import "./../../../assets/sass/dotted-border";
 
 $grey: rgb(151, 152, 153, 0.5);
 $blue: #4887d7;
 
 .template3-container {
-  font-family: 'Barlow Semi Condensed', sans-serif;
+  font-family: "Barlow Semi Condensed", sans-serif;
   background: $grey;
   display: grid;
   grid-template-columns: auto 1000px auto;
@@ -82,10 +82,19 @@ $blue: #4887d7;
     .data {
       .mobile,
       .email,
-      .address {
+      .address,
+      .website,
+      .linkedin,
+      .facebook,
+      .twitter {
         margin: 0 20px;
         padding-bottom: 10px;
         font-size: 20px;
+        overflow-wrap: break-word;
+        img {
+          max-height: 60px;
+        }
+
         /* Horizontal dash border */
         @include dottedBorder($grey, "horizontal", bottom, 11px, 4px);
 
@@ -111,7 +120,7 @@ $blue: #4887d7;
       }
       img {
         position: relative;
-        top:5px;
+        top: 5px;
         margin-left: 20px;
       }
       .education-text {

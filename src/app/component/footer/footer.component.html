@@ -12,6 +12,7 @@
       </div>
     </div>
     <div class="user_details">
+      <!-- Address -->
       <div class="user_details_container" *ngIf="personalInfo.address">
         <img
           class="user_details_icon"
@@ -20,6 +21,7 @@
         <div>ADDRESS : &nbsp;</div>
         <div>{{ personalInfo.address }}</div>
       </div>
+      <!-- Mobile -->
       <div class="user_details_container" *ngIf="personalInfo.mobile">
         <img
           class="user_details_icon"
@@ -28,6 +30,7 @@
         <div>MOBILE : &nbsp;</div>
         <div>{{ personalInfo.mobile }}</div>
       </div>
+      <!-- Email -->
       <div class="user_details_container" *ngIf="personalInfo.email">
         <img
           class="user_details_icon"
@@ -36,6 +39,7 @@
         <div>EMAIL : &nbsp;</div>
         <div>{{ personalInfo.email }}</div>
       </div>
+      <!-- Website -->
       <div class="user_details_container" *ngIf="personalInfo.website">
         <img
           class="user_details_icon"
@@ -44,6 +48,34 @@
         <div>WEBSITE : &nbsp;</div>
         <div>{{ personalInfo.website }}</div>
       </div>
+      <!-- linkedIn -->
+      <div class="user_details_container" *ngIf="personalInfo.linkedIn">
+        <img
+          class="user_details_icon"
+          src="https://img.icons8.com/wired/32/000000/linkedin.png"
+        />
+        <div>LINKEDIN : &nbsp;</div>
+        <div>{{ personalInfo.linkedIn }}</div>
+      </div>
+      <!-- Facebook -->
+      <div class="user_details_container" *ngIf="personalInfo.fb">
+        <img
+          class="user_details_icon"
+          src="https://img.icons8.com/wired/32/000000/facebook.png"
+        />
+        <div>FACEBOOK : &nbsp;</div>
+        <div>{{ personalInfo.fb }}</div>
+      </div>
+      <!-- Twitter -->
+      <div class="user_details_container" *ngIf="personalInfo.twitter">
+        <img
+          class="user_details_icon"
+          src="https://img.icons8.com/wired/32/000000/twitter.png"
+        />
+        <div>TWITTER : &nbsp;</div>
+        <div>{{ personalInfo.twitter }}</div>
+      </div>
+
     </div>
   </div>
 </div>

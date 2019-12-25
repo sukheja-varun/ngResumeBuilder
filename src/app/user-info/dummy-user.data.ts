@@ -30,7 +30,7 @@ export const dummyUser: User = {
             shortDescription: 'Worked as a Java Backend Developer in Java R&D Team as a Level3 developer.'
         }
     ],
-    education: [
+    educations: [
         {
             institute: 'LNCT, Bhopal',
             startDate: '2011-06-01',
@@ -64,7 +64,7 @@ export const dummyUser: User = {
         { name: 'Spanish', score: 6, color: 'darkblue' },
         { name: 'French', score: 4, color: 'lime' }
     ],
-    hobbies: ['dancing', 'writing', 'music', 'voluntering'],
+    hobbies: ['dancing', 'writing', 'music', 'volunteering'],
     certificates: [
         {
             title: 'Oracle Certified Professional, Java SE 6 Programmer',
@@ -74,7 +74,7 @@ export const dummyUser: User = {
     ],
     awards: [
         {
-            title: 'All Rounder of the Year-2017',
+            title: 'All Rounder of the Year',
             issueDate: '2018-01-01',
             issuedBy: 'ShoppinPal',
             shortDescription: 'Issued for the overall performance in various sectors.'

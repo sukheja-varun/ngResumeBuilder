@@ -11,6 +11,7 @@ import { FooterComponent } from './component/footer/footer.component';
 import { Template1Component } from './template/template1/template1.component';
 import { Template2Component } from './template/template2/template2.component';
 import { Template3Component } from './template/template3/template3.component';
+import { TemplateSelectorComponent } from './home/components/template-selector/template-selector.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { Template3Component } from './template/template3/template3.component';
     FooterComponent,
     Template1Component,
     Template2Component,
-    Template3Component
+    Template3Component,
+    TemplateSelectorComponent
   ],
   imports: [
     BrowserModule,

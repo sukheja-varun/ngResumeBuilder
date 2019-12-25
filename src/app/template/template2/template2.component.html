@@ -1,178 +1,198 @@
+<div class="capture-headerbar">
+  <img
+    class="capture-headerbar-icon"
+    src="https://img.icons8.com/dusk/48/000000/compact-camera.png"
+    (click)="downloadResume()"
+  />
+</div>
 <div class="template2-container">
   <div></div>
-  <div class="left-col">
-    <section class="personal-info">
-      <div>
-        <img src="./assets/images/profile.png" alt="" />
-      </div>
-      <div class="hello-text">Hello, I am..</div>
-      <div class="name">{{ userData.personalInfo.name }}</div>
-      <div class="job-title">{{ userData.personalInfo.title }}</div>
-    </section>
-    <section class="contact">
-      <div class="title">
-        <img src="../../../assets/template2/icons/contact.svg" alt="" />
-        <span class="title-text">Contact</span>
-      </div>
-      <div class="data">
-        <div class="mobile">
-          <img src="../../../assets/template2/icons/mobile.svg" alt="" />
-          <span class="data-text">{{ userData.personalInfo.mobile }}</span>
+  <div class="template2" id="contentToConvert">
+    <div class="left-col">
+      <section class="personal-info">
+        <div>
+          <img src="./assets/images/profile.png" alt="" />
         </div>
-        <div class="email">
-          <img src="../../../assets/template2/icons/mail.svg" alt="" />
-          <span class="data-text">{{ userData.personalInfo.email }}</span>
+        <div class="hello-text">Hello, I am..</div>
+        <div class="name">{{ userData.personalInfo.name }}</div>
+        <div class="job-title">{{ userData.personalInfo.title }}</div>
+      </section>
+      <section class="contact">
+        <div class="title">
+          <img src="../../../assets/template2/icons/contact.svg" alt="" />
+          <span class="title-text">Contact</span>
         </div>
-        <div class="address">
-          <img src="../../../assets/template2/icons/address.svg" alt="" />
-          <span class="data-text">{{ userData.personalInfo.address }} </span>
-        </div>
-        <div class="personal-site">
-          <img src="../../../assets/template2/icons/web.svg" alt="" />
-          <span class="data-text">{{ userData.personalInfo.website }}</span>
-        </div>
-      </div>
-    </section>
-    <section class="language">
-      <div class="title">
-        <img src="../../../assets/template2/icons/language.svg" alt="" />
-        <span class="title-text">Language</span>
-      </div>
-      <div class="data">
-        <div *ngFor="let lang of userData.languages">
-          <span>{{ lang.name }}</span>
-          <span
-            >:
-            {{
-              lang.score > 7
-                ? "Advanced"
-                : lang.score > 4
-                ? "Intermediate"
-                : "Basic"
-            }}</span
-          >
-        </div>
-      </div>
-    </section>
-    <section class="hobbies">
-      <div class="title">
-        <img src="../../../assets/template2/icons/hobby.svg" alt="" />
-        <span class="title-text">Hobbies</span>
-      </div>
-      <div class="data">
-        <div *ngFor="let hobby of userData.hobbies">
-          {{ hobby | titlecase }}
-        </div>
-      </div>
-    </section>
-  </div>
-  <div class="right-col">
-    <section class="education">
-      <div class="title">Education</div>
-      <main>
         <div class="data">
-          <div class="item" *ngFor="let edu of userData.education">
-            <div>
-              {{ edu.startDate | date: "yyyy" }} -
-              {{ edu.startDate | date: "yyyy" }}
-            </div>
-            <div>
-              <!-- <div></div> -->
-              <div class="rating-circle"></div>
-            </div>
-            <div>{{ edu.institute }}</div>
+          <div class="mobile">
+            <img src="../../../assets/template2/icons/mobile.svg" alt="" />
+            <span class="data-text">{{ userData.personalInfo.mobile }}</span>
+          </div>
+          <div class="email">
+            <img src="../../../assets/template2/icons/mail.svg" alt="" />
+            <span class="data-text">{{ userData.personalInfo.email }}</span>
+          </div>
+          <div class="address">
+            <img src="../../../assets/template2/icons/address.svg" alt="" />
+            <span class="data-text">{{ userData.personalInfo.address }} </span>
+          </div>
+          <div class="personal-site" *ngIf="userData.personalInfo.website">
+            <img src="../../../assets/template2/icons/web.svg" alt="" />
+            <span class="data-text">{{ userData.personalInfo.website }}</span>
+          </div>
+          <div class="personal-site" *ngIf="userData.personalInfo.linkedIn">
+            <img src="../../../assets/template2/icons/linkedin.svg" alt="" />
+            <span class="data-text">{{ userData.personalInfo.linkedIn }}</span>
+          </div>
+          <div class="personal-site" *ngIf="userData.personalInfo.fb">
+            <img src="../../../assets/template2/icons/fb.svg" alt="" />
+            <span class="data-text">{{ userData.personalInfo.fb }}</span>
+          </div>
+          <div class="personal-site" *ngIf="userData.personalInfo.twitter">
+            <img src="../../../assets/template2/icons/twitter.svg" alt="" />
+            <span class="data-text">{{ userData.personalInfo.twitter }}</span>
           </div>
         </div>
-        <div class="section-icon ">
-          <img
-            src="../../../assets/template2/icons/graduation_cap.svg"
-            alt=""
-          />
+      </section>
+      <section class="language">
+        <div class="title">
+          <img src="../../../assets/template2/icons/language.svg" alt="" />
+          <span class="title-text">Language</span>
         </div>
-      </main>
-    </section>
-    <section class="experience">
-      <div class="title">Experience</div>
-      <main>
         <div class="data">
-          <div class="item" *ngFor="let exp of userData.experiences">
-            <div>
-              {{ exp.startDate | date: "yyyy" }} -
-              {{ exp.startDate | date: "yyyy" }}
+          <div *ngFor="let lang of userData.languages">
+            <span>{{ lang.name }}</span>
+            <span
+              >:
+              {{
+                lang.score > 7
+                  ? "Advanced"
+                  : lang.score > 4
+                  ? "Intermediate"
+                  : "Basic"
+              }}</span
+            >
+          </div>
+        </div>
+      </section>
+      <section class="hobbies">
+        <div class="title">
+          <img src="../../../assets/template2/icons/hobby.svg" alt="" />
+          <span class="title-text">Hobbies</span>
+        </div>
+        <div class="data">
+          <div *ngFor="let hobby of userData.hobbies">
+            {{ hobby | titlecase }}
+          </div>
+        </div>
+      </section>
+    </div>
+    <div class="right-col">
+      <section class="education">
+        <div class="title">Education</div>
+        <main>
+          <div class="data">
+            <div class="item" *ngFor="let edu of userData.educations">
+              <div>
+                {{ edu.startDate | date: "yyyy" }} -
+                {{ edu.startDate | date: "yyyy" }}
+              </div>
+              <div>
+                <!-- <div></div> -->
+                <div class="rating-circle"></div>
+              </div>
+              <div>{{ edu.institute }}</div>
             </div>
-            <div>
+          </div>
+          <div class="section-icon ">
+            <img
+              src="../../../assets/template2/icons/graduation_cap.svg"
+              alt=""
+            />
+          </div>
+        </main>
+      </section>
+      <section class="experience">
+        <div class="title">Experience</div>
+        <main>
+          <div class="data">
+            <div class="item" *ngFor="let exp of userData.experiences">
+              <div>
+                {{ exp.startDate | date: "yyyy" }} -
+                {{ exp.startDate | date: "yyyy" }}
+              </div>
+              <div>
+                <div></div>
+                <div class="rating-circle"></div>
+              </div>
+              <div>{{ exp.institute }}</div>
+            </div>
+          </div>
+          <div class="section-icon">
+            <img src="../../../assets/template2/icons/tie.svg" alt="" />
+          </div>
+        </main>
+      </section>
+      <section class="skills">
+        <div class="title">Skills</div>
+        <main>
+          <div class="data">
+            <div class="item" *ngFor="let skill of userData.skills">
+              <div class="skill-name">{{ skill.name }}</div>
               <div></div>
-              <div class="rating-circle"></div>
-            </div>
-            <div>{{ exp.institute }}</div>
-          </div>
-        </div>
-        <div class="section-icon">
-          <img src="../../../assets/template2/icons/tie.svg" alt="" />
-        </div>
-      </main>
-    </section>
-    <section class="skills">
-      <div class="title">Skills</div>
-      <main>
-        <div class="data">
-          <div class="item" *ngFor="let skill of userData.skills">
-            <div class="skill-name">{{ skill.name }}</div>
-            <div></div>
-            <div class="skill-rating">
-              <div
-                class="rating-circle"
-                [ngClass]="{ filled: skill.score / 10 > num }"
-                *ngFor="let num of Arr.from(Arr(10).keys())"
-              ></div>
+              <div class="skill-rating">
+                <div
+                  class="rating-circle"
+                  [ngClass]="{ filled: skill.score / 10 > num }"
+                  *ngFor="let num of Arr.from(Arr(10).keys())"
+                ></div>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="section-icon">
-          <img src="../../../assets/template2/icons/monitor.svg" alt="" />
-        </div>
-      </main>
-    </section>
-    <section class="certificates">
-      <div class="title">Certificates</div>
-      <main>
-        <div class="data">
-          <div class="item" *ngFor="let certificate of userData.certificates">
-            <div>
-              {{ certificate.issueDate }}
-            </div>
-            <div>
-              <!-- <div></div> -->
-              <div class="rating-circle"></div>
-            </div>
-            <div class="skill-name">{{ certificate.title }}</div>
+          <div class="section-icon">
+            <img src="../../../assets/template2/icons/monitor.svg" alt="" />
           </div>
-        </div>
-        <div class="section-icon">
-          <img src="../../../assets/template2/icons/certificate.svg" alt="" />
-        </div>
-      </main>
-    </section>
-    <section class="achivements">
-      <div class="title">Achivements</div>
-      <main>
-        <div class="data">
-          <div class="item" *ngFor="let award of userData.awards">
-            <div>
-              {{ award.issueDate | date: "yyyy" }}
+        </main>
+      </section>
+      <section class="certificates">
+        <div class="title">Certificates</div>
+        <main>
+          <div class="data">
+            <div class="item" *ngFor="let certificate of userData.certificates">
+              <div>
+                {{ certificate.issueDate | date: "yyyy" }}
+              </div>
+              <div>
+                <div class="rating-circle"></div>
+              </div>
+              <div class="skill-name">{{ certificate.title }}</div>
             </div>
-            <div>
-              <div></div>
-              <div class="rating-circle"></div>
-            </div>
-            <div>{{ award.title }}</div>
           </div>
-        </div>
-        <div class="section-icon">
-          <img src="../../../assets/template2/icons/trophy.svg" alt="" />
-        </div>
-      </main>
-    </section>
+          <div class="section-icon">
+            <img src="../../../assets/template2/icons/certificate.svg" alt="" />
+          </div>
+        </main>
+      </section>
+      <section class="awards">
+        <div class="title">Awards</div>
+        <main>
+          <div class="data">
+            <div class="item" *ngFor="let award of userData.awards">
+              <div>
+                {{ award.issueDate | date: "yyyy" }}
+              </div>
+              <div>
+                <div></div>
+                <div class="rating-circle"></div>
+              </div>
+              <div>{{ award.title }}</div>
+            </div>
+          </div>
+          <div class="section-icon">
+            <img src="../../../assets/template2/icons/trophy.svg" alt="" />
+          </div>
+        </main>
+      </section>
+    </div>
   </div>
   <div></div>
 </div>

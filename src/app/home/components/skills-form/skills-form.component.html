@@ -2,9 +2,13 @@
   <!-- Skills Data -->
   <div class="form-alignment">
     <h2 class="form-title">Skills Data</h2>
+
     <div formArrayName="skills">
       <ng-container
-        *ngFor="let skill of extrasForm.get('skills')['controls']; let i = index"
+        *ngFor="
+          let skill of extrasForm.get('skills')['controls'];
+          let i = index
+        "
       >
         <div [formGroupName]="i">
           <!-- Skill -->
@@ -23,7 +27,19 @@
             <input class="form-control" type="text" formControlName="color" />
           </div>
         </div>
+
+        <!-- Divider with option to delete -->
+        <h2
+          class="divider line glow"
+          *ngIf="extrasForm.get('skills')['controls'].length > 1"
+        >
+          <span class="pointer" (click)="onDelete(i, 'skills')"
+            >Click to delete</span
+          >
+        </h2>
       </ng-container>
+
+      <!-- Add more button -->
       <button
         class="add-button"
         type="button"
@@ -62,7 +78,19 @@
             <input class="form-control" type="text" formControlName="color" />
           </div>
         </div>
+
+        <!-- Divider with option to delete -->
+        <h2
+          class="divider line glow"
+          *ngIf="extrasForm.get('languages')['controls'].length > 1"
+        >
+          <span class="pointer" (click)="onDelete(i, 'languages')"
+            >Click to delete</span
+          >
+        </h2>
       </ng-container>
+
+      <!-- Add more button -->
       <button
         class="add-button"
         type="button"
@@ -78,38 +106,46 @@
   <div class="form-alignment">
     <h2 class="form-title">Hobbies Data</h2>
     <div formArrayName="hobbies">
+      <!-- Selected hobbies as chips -->
       <ng-container
         *ngFor="
           let hobbyControl of extrasForm.get('hobbies')['controls'];
           let i = index
         "
       >
-        <ng-container
+        <!-- <ng-container
           *ngIf="
             extrasForm.get('hobbies').at(i).value as selectedHobby;
             else elseTemplate
           "
-        >
-          <span> {{ selectedHobby }},</span>
-        </ng-container>
-        <ng-template #elseTemplate>
-          <!-- Hobby Dropdown-->
-          <div class="form-group required">
-            <label>Hobby</label>
-            <select
-              class="form-control"
-              [formControlName]="i"
-              (change)="onAddHobby()"
-            >
-              <option *ngFor="let hobby of hobbiesList" [value]="hobby">{{
-                hobby
-              }}</option>
-            </select>
-          </div>
-        </ng-template>
+        > -->
+        <div class="chip">
+          <span>{{ hobbyControl.value }}</span>
+          <button
+            type="button"
+            (click)="onDelete(i, 'hobbies')"
+            class="chip-remove"
+          ></button>
+        </div>
       </ng-container>
+      <!--  Select Hobby Dropdown-->
+      <div class="form-group required">
+        <label>Hobby</label>
+        <select
+          class="form-control"
+          (change)="onAddHobby(hobbySelect.value)"
+          #hobbySelect
+        >
+          <option *ngFor="let hobby of hobbiesList" [value]="hobby">{{
+            hobby
+          }}</option>
+        </select>
+      </div>
     </div>
-    <button class="success-button" type="submit">
+
+    <!-- Submit button -->
+    <button class="success-button" type="submit"
+    [disabled]="extrasForm.invalid">
       Submit
     </button>
   </div>

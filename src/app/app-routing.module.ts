@@ -4,6 +4,7 @@ import { Routes, RouterModule } from "@angular/router";
 import { Template1Component } from "./template/template1/template1.component";
 import { Template2Component } from "./template/template2/template2.component";
 import { Template3Component } from "./template/template3/template3.component";
+import { TemplateSelectorComponent } from './home/components/template-selector/template-selector.component';
 
 const routes: Routes = [
   { path: "", redirectTo: "/home", pathMatch: "full" },
@@ -11,6 +12,7 @@ const routes: Routes = [
     path: "home",
     loadChildren: () => import("./home/home.module").then(m => m.HomeModule)
   },
+  { path: "templates", component: TemplateSelectorComponent },
   { path: "template1", component: Template1Component },
   { path: "template2", component: Template2Component },
   { path: "template3", component: Template3Component }
@@ -20,4 +22,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

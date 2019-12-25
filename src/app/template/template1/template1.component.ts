@@ -23,12 +23,16 @@ export class Template1Component implements OnInit {
 
   ngOnInit() {
     this.getUserDetails();
-    console.log(this.userData);
-
   }
 
   getUserDetails() {
     this.userData = this._userInfoService.getUserData();
+    this.userData.experiences =
+      this.userData.experiences
+        .concat(this.userData.educations)
+        .sort(
+          (a, b) => +new Date(b.startDate) - +new Date(a.startDate)
+        );
   }
 
   public captureScreen() {

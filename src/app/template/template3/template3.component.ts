@@ -29,7 +29,7 @@ export class Template3Component implements OnInit {
 
   getUserDetails() {
     this.userData = this._userInfoService.getUserData();
-    this.userData.education.map(edu => {
+    this.userData.educations.map(edu => {
       edu.startDate = edu.startDate.split("-")[0];
       edu.endDate = edu.endDate.split("-")[0];
       return edu;

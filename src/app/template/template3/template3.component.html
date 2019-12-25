@@ -6,11 +6,11 @@
   />
 </div>
 
-<div class="template3-container" id="contentToConvert">
+<div class="template3-container">
   <!-- NOTE: don't delete this empty div -->
   <div></div>
   <!-- Template 3 content starts here -->
-  <div class="template3">
+  <div class="template3" id="contentToConvert">
     <!-- Left Column content starts here -->
     <div class="left-col">
       <!-- User Personal Info starts here -->
@@ -45,13 +45,48 @@
               {{ userData.personalInfo.address }}
             </div>
           </div>
+          <div class="website" *ngIf="userData.personalInfo.website">
+            <figure>
+              <img src="../../../assets/template3/icons/website.svg" alt="" />
+            </figure>
+            <div class="data-text">
+              {{ userData.personalInfo.website }}
+            </div>
+          </div>
+          <div class="linkedin" *ngIf="userData.personalInfo.linkedIn">
+            <figure>
+              <img src="../../../assets/template3/icons/linkedin.svg" alt="" />
+            </figure>
+            <div class="data-text">
+              {{ userData.personalInfo.linkedIn }}
+            </div>
+          </div>
+          <div class="facebook" *ngIf="userData.personalInfo.fb">
+            <figure>
+              <img src="../../../assets/template3/icons/fb.svg" alt="" />
+            </figure>
+            <div class="data-text">
+              {{ userData.personalInfo.fb }}
+            </div>
+          </div>
+          <div class="twitter" *ngIf="userData.personalInfo.twitter">
+            <figure>
+              <img src="../../../assets/template3/icons/twitter.svg" alt="" />
+            </figure>
+            <div class="data-text">
+              {{ userData.personalInfo.twitter }}
+            </div>
+          </div>
         </div>
       </section>
     </div>
-    <!-- Left Right content starts here -->
+    <!-- Right Column content starts here -->
     <div class="right-col">
       <!-- Education section -->
-      <section class="education">
+      <section
+        class="education"
+        *ngIf="userData.educations && userData.educations.length"
+      >
         <div class="title">
           <span class="education-text">
             Education
@@ -59,7 +94,7 @@
           <img src="../../../assets/template3/icons/education.svg" alt="" />
         </div>
         <div class="data">
-          <div *ngFor="let edu of userData.education; let index = index">
+          <div *ngFor="let edu of userData.educations; let index = index">
             <span class="date"> {{ edu.startDate }}-{{ edu.endDate }} </span>
             <span class="institute">
               {{ edu.institute }}
@@ -68,7 +103,10 @@
         </div>
       </section>
       <!-- Experience Section -->
-      <section class="experience">
+      <section
+        class="experience"
+        *ngIf="userData.experiences && userData.experiences.length"
+      >
         <div class="title">
           <span class="experience-text">
             Experience
@@ -89,7 +127,7 @@
         </div>
       </section>
       <!-- Skills section -->
-      <section class="skills">
+      <section class="skills" *ngIf="userData.skills && userData.skills.length">
         <div class="title">
           <span class="skills-text">
             Skills
@@ -107,7 +145,7 @@
         </div>
       </section>
       <!-- Awards section -->
-      <section class="awards">
+      <section class="awards" *ngIf="userData.awards && userData.awards.length">
         <div class="title">
           <span class="awards-text">
             Awards
@@ -120,7 +158,9 @@
               <img src="../../../assets/template3/icons/awards.svg" alt="" />
             </div>
             <div class="data-text">
-              <div class="data-title">{{ award.title }}</div>
+              <div class="data-title">
+                {{ award.title }}-{{ award.issueDate | date: "yyyy" }}
+              </div>
               <div class="data-short-description">
                 {{ award.shortDescription }}
               </div>
@@ -129,7 +169,10 @@
         </div>
       </section>
       <!-- Languages section -->
-      <section class="languages">
+      <section
+        class="languages"
+        *ngIf="userData.languages && userData.languages.length"
+      >
         <div class="title">
           <span class="languages-text">
             Languages
