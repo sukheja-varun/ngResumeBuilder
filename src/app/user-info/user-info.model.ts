@@ -5,8 +5,8 @@ export interface User {
     skills: Skill[];
     hobbies: Hobby[];
     languages: Language[];
-    certificates: Certificate[];
-    awards: Award[];
+    certificates: Achievement[];
+    awards: Achievement[];
 }
 
 export interface Language {
@@ -40,16 +40,11 @@ export interface Skill {
     color?: string;
 }
 
-export interface Certificate {
+export interface Achievement {
     title: string;
     issuedBy: string;
     issueDate: string;
+    shortDescription?: string;
 }
 
-export interface Award {
-    title: string;
-    issuedBy: string;
-    issueDate: string;
-    shortDescription: string;
-}
 export type Hobby = string;

@@ -74,7 +74,7 @@ export const dummyUser: User = {
     ],
     awards: [
         {
-            title: 'All Rounder of the Year-2017',
+            title: 'All Rounder of the Year',
             issueDate: '2018-01-01',
             issuedBy: 'ShoppinPal',
             shortDescription: 'Issued for the overall performance in various sectors.'

@@ -151,7 +151,7 @@
         <div class="data">
           <div class="item" *ngFor="let certificate of userData.certificates">
             <div>
-              {{ certificate.issueDate }}
+              {{ certificate.issueDate | date: "yyyy" }}
             </div>
             <div>
               <div class="rating-circle"></div>

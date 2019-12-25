@@ -158,7 +158,9 @@
               <img src="../../../assets/template3/icons/awards.svg" alt="" />
             </div>
             <div class="data-text">
-              <div class="data-title">{{ award.title }}</div>
+              <div class="data-title">
+                {{ award.title }}-{{ award.issueDate | date: "yyyy" }}
+              </div>
               <div class="data-short-description">
                 {{ award.shortDescription }}
               </div>

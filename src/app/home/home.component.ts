@@ -51,6 +51,12 @@ export class HomeComponent implements OnInit {
     this.user.skills = data.skills;
     this.user.languages = data.languages;
     this.user.hobbies = data.hobbies;
+    this.activeFormIndex = 4;
+  }
+
+  onAchievementsData(data) {
+    this.user.awards = data.awards;
+    this.user.certificates = data.certificates;
     this.userInfoService.setUserData(this.user);
     this.router.navigate(['/templates']);
   }
