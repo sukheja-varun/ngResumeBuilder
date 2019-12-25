@@ -11,248 +11,223 @@ $border: lightgrey;
 $page-background: rgb(151, 152, 153);
 
 .template2-container {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   background-color: $page-background;
   display: grid;
-  grid-template-columns: auto 432px 648px auto;
-  .left-col {
-    background-color: $dark-background;
-    color: white;
-    .personal-info {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin: 10px 0px;
-      img {
-        width: 150px;
-        height: 150px;
-        border-radius: 50%;
-        border: 5px solid white;
-      }
-      .hello-text {
-        background-color: $title-background;
-        margin: 15px 0;
-        padding: 0 7px;
-
-        position: relative;
-        // background-color: #e15915;
-        // height: 320px !important;
-        // width: 100% !important;
-        &::after {
-          content: "";
-          position: absolute;
-          top: 100%;
-          left: 50%;
-          margin-left: -9px;
-          width: 0;
-          height: 0;
-          border-top: solid 7px $title-background;
-          border-left: solid 7px transparent;
-          border-right: solid 7px transparent;
-        }
-      }
-      .name {
-        margin-top: 10px;
-        text-transform: uppercase;
-        font-size: 24px;
-        font-weight: bold;
-      }
-      .job-title {
-        margin-bottom: 30px;
-      }
+  grid-template-columns: auto 1080px auto;
+}
+.template2 {
+  display: grid;
+  grid-template-columns: 432px 648px;
+}
+.left-col {
+  background-color: $dark-background;
+  color: white;
+  .personal-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px 0px;
+    img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 5px solid white;
     }
-    .title {
+    .hello-text {
       background-color: $title-background;
-      padding: 10px;
+      margin: 15px 0;
+      padding: 0 7px;
+
+      position: relative;
+      &::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        margin-left: -9px;
+        width: 0;
+        height: 0;
+        border-top: solid 7px $title-background;
+        border-left: solid 7px transparent;
+        border-right: solid 7px transparent;
+      }
+    }
+    .name {
+      margin-top: 10px;
+      text-transform: uppercase;
+      font-size: 24px;
+      font-weight: bold;
+    }
+    .job-title {
+      margin-bottom: 30px;
+    }
+  }
+  .title {
+    background-color: $title-background;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    img {
+      max-height: 30px;
+    }
+    .title-text {
+      text-transform: uppercase;
+      margin-left: 20px;
+      font-weight: bold;
+    }
+  }
+  .data {
+    margin: 10px 10px 10px 20px;
+    font-size: 13px;
+    div {
       display: flex;
-      align-items: center;
-      img {
-        max-height: 30px;
-      }
-      .title-text {
-        text-transform: uppercase;
-        margin-left: 20px;
-        font-weight: bold;
-      }
+      align-items: flex-start;
+      padding: 5px 0;
     }
+  }
+  .contact {
     .data {
-      margin: 10px 10px 10px 20px;
-      font-size: 13px;
-      div {
-        display: flex;
-        align-items: flex-start;
-        padding: 5px 0;
+      img {
+        height: 15px;
       }
-    }
-    .contact {
-      .data {
-        img {
-          height: 15px;
-        }
-        .data-text {
-          margin-left: 10px;
-        }
-      }
-    }
-    .language {
-      .data > div {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
+      .data-text {
+        margin-left: 10px;
       }
     }
   }
-  .right-col {
-    background-color: white;
-    padding-top: 10px;
-    section {
+  .language {
+    .data > div {
       display: grid;
-      grid-template-columns: 20px auto;
-      grid-gap: 20px;
-      .title {
-        color: white;
-        writing-mode: vertical-lr;
-        font-size: 20px;
-        width: 22px;
-        background-color: $orange;
-        padding: 10px 0;
-        margin: 15px 0;
-        text-align: center;
-        position: relative;
-        &::after {
-          content: "";
-          position: absolute;
-          top: 100%;
-          width: 0;
-          height: 0;
-          border-top: solid 15px $orange;
-          border-right: solid 22px transparent;
-        }
-        &::before {
-          content: "";
-          position: absolute;
-          bottom: 100%;
-          width: 0;
-          height: 0;
-          border-bottom: solid 15px $orange;
-          border-right: solid 22px transparent;
-        }
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+}
+.right-col {
+  background-color: white;
+  padding-top: 10px;
+  section {
+    display: grid;
+    grid-template-columns: 20px auto;
+    grid-gap: 20px;
+    .title {
+      color: white;
+      writing-mode: vertical-lr;
+      font-size: 20px;
+      width: 22px;
+      background-color: $orange;
+      padding: 10px 0;
+      margin: 15px 0;
+      text-align: center;
+      position: relative;
+      &::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        width: 0;
+        height: 0;
+        border-top: solid 15px $orange;
+        border-right: solid 22px transparent;
       }
-      main {
-        border-top: 3px solid $border;
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: 100%;
+        width: 0;
+        height: 0;
+        border-bottom: solid 15px $orange;
+        border-right: solid 22px transparent;
+      }
+    }
+    main {
+      border-top: 3px solid $border;
+      margin-right: 20px;
+      padding: 10px;
+    }
+    &:first-child main {
+      border-top: none;
+    }
+  }
+  .experience .title {
+    background-color: $green;
+    &::before {
+      border-bottom-color: $green;
+    }
+    &::after {
+      border-top-color: $green;
+    }
+  }
+  .skills .title {
+    background-color: $red;
+    &::before {
+      border-bottom-color: $red;
+    }
+    &::after {
+      border-top-color: $red;
+    }
+  }
+  .certificates .title {
+    background-color: $purple;
+    &::before {
+      border-bottom-color: $purple;
+    }
+    &::after {
+      border-top-color: $purple;
+    }
+  }
+  .awards .title {
+    background-color: $blue;
+    &::before {
+      border-bottom-color: $blue;
+    }
+    &::after {
+      border-top-color: $blue;
+    }
+  }
+
+  .skills .data {
+    .skill-rating {
+      display: inline-flex;
+
+      .rating-circle {
+        margin: 0 5px;
+      }
+    }
+  }
+
+  .education,
+  .experience,
+  .skills,
+  .certificates,
+  .awards {
+    main {
+      display: flex;
+      align-items: center;
+      .data {
+        width: 100%;
         margin-right: 20px;
-        padding: 10px;
-      }
-      &:first-child main {
-        border-top: none;
-      }
-    }
-    .experience .title {
-      background-color: $green;
-      &::before {
-        border-bottom-color: $green;
-      }
-      &::after {
-        border-top-color: $green;
-      }
-    }
-    .skills .title {
-      background-color: $red;
-      &::before {
-        border-bottom-color: $red;
-      }
-      &::after {
-        border-top-color: $red;
-      }
-    }
-    .certificates .title {
-      background-color: $purple;
-      &::before {
-        border-bottom-color: $purple;
-      }
-      &::after {
-        border-top-color: $purple;
-      }
-    }
-    .achivements .title {
-      background-color: $blue;
-      &::before {
-        border-bottom-color: $blue;
-      }
-      &::after {
-        border-top-color: $blue;
-      }
-    }
+        .item {
+          display: grid;
+          align-items: center;
+          grid-gap: 10px;
+          grid-template-columns: 1fr 20px 1fr;
+          grid-auto-rows: 30px;
 
-    // .education,
-    // .experience,
-    // .achivements
-    // .skills,
-    // .data {
-    //   .item {
-    //     display: grid;
-    //     grid-gap: 10px;
-    //     grid-template-columns: 1fr 20px 1fr;
-    //     grid-auto-rows: 30px;
-    //     // justify-content: right;
-
-    //     & > div {
-    //       text-align: center;
-    //     }
-    //     // display: flex;
-    //     // justify-content: center;
-    //   }
-    // }
-    .skills .data {
-      // .item {
-      //     display: flex;
-      //     align-content: center;
-      //   }
-      .skill-rating {
-        display: inline-flex;
-
-        .rating-circle {
-          margin: 0 5px;
-        }
-      }
-    }
-
-    .education,
-    .experience,
-    .skills,
-    .certificates,
-    .achivements {
-      main {
-        display: flex;
-        align-items: center;
-        .data {
-          width: 100%;
-          margin-right: 20px;
-          .item {
-            display: grid;
-            align-items: center;
-            grid-gap: 10px;
-            grid-template-columns: 1fr 20px 1fr;
-            grid-auto-rows: 30px;
-            // justify-content: right;
-
-            & > div {
-              text-align: center;
-            }
-            // display: flex;
-            // justify-content: center;
+          & > div {
+            text-align: center;
           }
         }
       }
     }
   }
+}
 
-  .rating-circle {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    border: 1px solid black;
-    &.filled {
-      background-color: black;
-    }
+.rating-circle {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 1px solid black;
+  &.filled {
+    background-color: black;
   }
 }
