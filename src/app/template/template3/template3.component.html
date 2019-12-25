@@ -45,6 +45,38 @@
               {{ userData.personalInfo.address }}
             </div>
           </div>
+          <div class="website" *ngIf="userData.personalInfo.website">
+            <figure>
+              <img src="../../../assets/template3/icons/website.svg" alt="" />
+            </figure>
+            <div class="data-text">
+              {{ userData.personalInfo.website }}
+            </div>
+          </div>
+          <div class="linkedin" *ngIf="userData.personalInfo.linkedIn">
+            <figure>
+              <img src="../../../assets/template3/icons/linkedin.svg" alt="" />
+            </figure>
+            <div class="data-text">
+              {{ userData.personalInfo.linkedIn }}
+            </div>
+          </div>
+          <div class="facebook" *ngIf="userData.personalInfo.fb">
+            <figure>
+              <img src="../../../assets/template3/icons/fb.svg" alt="" />
+            </figure>
+            <div class="data-text">
+              {{ userData.personalInfo.fb }}
+            </div>
+          </div>
+          <div class="twitter" *ngIf="userData.personalInfo.twitter">
+            <figure>
+              <img src="../../../assets/template3/icons/twitter.svg" alt="" />
+            </figure>
+            <div class="data-text">
+              {{ userData.personalInfo.twitter }}
+            </div>
+          </div>
         </div>
       </section>
     </div>

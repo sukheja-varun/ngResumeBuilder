@@ -31,6 +31,18 @@
           <img src="../../../assets/template2/icons/web.svg" alt="" />
           <span class="data-text">{{ userData.personalInfo.website }}</span>
         </div>
+        <div class="personal-site" *ngIf="userData.personalInfo.linkedIn">
+          <img src="../../../assets/template2/icons/linkedin.svg" alt="" />
+          <span class="data-text">{{ userData.personalInfo.linkedIn }}</span>
+        </div>
+        <div class="personal-site" *ngIf="userData.personalInfo.fb">
+          <img src="../../../assets/template2/icons/fb.svg" alt="" />
+          <span class="data-text">{{ userData.personalInfo.fb }}</span>
+        </div>
+        <div class="personal-site" *ngIf="userData.personalInfo.twitter">
+          <img src="../../../assets/template2/icons/twitter.svg" alt="" />
+          <span class="data-text">{{ userData.personalInfo.twitter }}</span>
+        </div>
       </div>
     </section>
     <section class="language">
