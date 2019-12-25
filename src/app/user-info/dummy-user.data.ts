@@ -64,7 +64,7 @@ export const dummyUser: User = {
         { name: 'Spanish', score: 6, color: 'darkblue' },
         { name: 'French', score: 4, color: 'lime' }
     ],
-    hobbies: ['dancing', 'writing', 'music', 'voluntering'],
+    hobbies: ['dancing', 'writing', 'music', 'volunteering'],
     certificates: [
         {
             title: 'Oracle Certified Professional, Java SE 6 Programmer',

@@ -27,7 +27,7 @@
           <img src="../../../assets/template2/icons/address.svg" alt="" />
           <span class="data-text">{{ userData.personalInfo.address }} </span>
         </div>
-        <div class="personal-site">
+        <div class="personal-site" *ngIf="userData.personalInfo.website">
           <img src="../../../assets/template2/icons/web.svg" alt="" />
           <span class="data-text">{{ userData.personalInfo.website }}</span>
         </div>
@@ -71,7 +71,7 @@
       <div class="title">Education</div>
       <main>
         <div class="data">
-          <div class="item" *ngFor="let edu of userData.education">
+          <div class="item" *ngFor="let edu of userData.educations">
             <div>
               {{ edu.startDate | date: "yyyy" }} -
               {{ edu.startDate | date: "yyyy" }}
@@ -142,7 +142,6 @@
               {{ certificate.issueDate }}
             </div>
             <div>
-              <!-- <div></div> -->
               <div class="rating-circle"></div>
             </div>
             <div class="skill-name">{{ certificate.title }}</div>
@@ -154,7 +153,7 @@
       </main>
     </section>
     <section class="achivements">
-      <div class="title">Achivements</div>
+      <div class="title">Achievements</div>
       <main>
         <div class="data">
           <div class="item" *ngFor="let award of userData.awards">

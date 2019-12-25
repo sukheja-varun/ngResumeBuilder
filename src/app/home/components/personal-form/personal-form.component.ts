@@ -26,7 +26,7 @@ export class PersonalFormComponent implements OnInit {
       'title': new FormControl(get(this.personalInfo, 'title', null), Validators.required),
       'address': new FormControl(get(this.personalInfo, 'address', null), Validators.required),
       'email': new FormControl(get(this.personalInfo, 'email', null), [Validators.required, Validators.email]),
-      'mobile': new FormControl(get(this.personalInfo, 'mobile', Validators.required)),
+      'mobile': new FormControl(get(this.personalInfo, 'mobile', null), Validators.required),
       'website': new FormControl(get(this.personalInfo, 'website', null)),
       'linkedIn': new FormControl(get(this.personalInfo, 'linkedIn', null)),
       'fb': new FormControl(get(this.personalInfo, 'fb', null)),

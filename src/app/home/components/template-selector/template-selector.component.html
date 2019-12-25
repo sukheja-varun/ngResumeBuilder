@@ -1,18 +1,12 @@
-<h2>Choose Template Here:</h2>
-<div class="container">
-  <!-- <div class="thumbnail" *ngFor="let item of items">
-
-  </div> -->
-
+<h2 class="title">Choose Template Here:</h2>
+<div class="thumbnail-container">
   <a
-  *ngFor="let item of items; let i = index"
-    [routerLink]="[ '/template'+ (i+1)]"
-    
+    *ngFor="let item of items; let i = index"
+    [routerLink]="['/template' + (i + 1)]"
   >
     <img
-      src="https://res.cloudinary.com/bnextdev/image/upload/c_thumb,h_300,g_face/v1575229562/resume_9_puahrw.png"
-      alt="Forest"
-      style="width:150px"
+      src="{{ './assets/images/template' + (i + 1) + '.png' }}"
+      style="width:300px"
     />
     <div>Template {{ i + 1 }}</div>
   </a>
