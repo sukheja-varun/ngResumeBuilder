@@ -8,13 +8,15 @@ import { HomeComponent } from './home.component';
 import { PersonalFormComponent } from './components/personal-form/personal-form.component';
 import { ExperienceFormComponent } from './components/experience-form/experience-form.component';
 import { SkillsFormComponent } from './components/skills-form/skills-form.component';
+import { AchievementsFormComponent } from './components/achievements-form/achievements-form.component';
 
 @NgModule({
   declarations: [
     HomeComponent,
     PersonalFormComponent,
     ExperienceFormComponent,
-    SkillsFormComponent
+    SkillsFormComponent,
+    AchievementsFormComponent,
   ],
   imports: [
     CommonModule,

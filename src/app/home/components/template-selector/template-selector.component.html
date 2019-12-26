@@ -1,0 +1,13 @@
+<h2 class="title">Choose Template Here:</h2>
+<div class="thumbnail-container">
+  <a
+    *ngFor="let item of items; let i = index"
+    [routerLink]="['/template' + (i + 1)]"
+  >
+    <img
+      src="{{ './assets/images/template' + (i + 1) + '.png' }}"
+      style="width:300px"
+    />
+    <div>Template {{ i + 1 }}</div>
+  </a>
+</div>

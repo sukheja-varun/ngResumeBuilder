@@ -1,21 +1,25 @@
 @import "./../../../assets/sass/variable";
 @import "./../../../assets/sass/mixins";
 
-.capture-headerbar{
+.capture-headerbar {
   height: 60px;
   width: 100%;
   background-color: rgb(73, 150, 201);
-  background: linear-gradient(to bottom,rgb(73, 150, 201) 0%,transparent 100%);
+  background: linear-gradient(
+    to bottom,
+    rgb(73, 150, 201) 0%,
+    transparent 100%
+  );
   position: fixed;
   z-index: 900;
-  .capture-headerbar-icon{
+  .capture-headerbar-icon {
     height: 40px;
     margin-top: 10px;
     margin-right: 88px;
     float: right;
   }
   :hover {
-    border: solid 1px #CCC;
+    border: solid 1px #ccc;
     -moz-box-shadow: 1px 1px 5px #999;
     -webkit-box-shadow: 1px 1px 5px #999;
     box-shadow: 1px 1px 5px #999;
@@ -40,9 +44,9 @@
   .header {
     margin-top: 60px;
     .header-img {
-    height: 300px;
-    display: flex;
-    margin: 10px auto;
+      height: 300px;
+      display: flex;
+      margin: 10px auto;
     }
   }
 
@@ -64,6 +68,7 @@
   .skills,
   .languages,
   .hobbies {
+    background: #e6e6e6;
     grid-column-start: 8;
     grid-column-end: 11;
     @include mobile-and-tablet {
@@ -79,14 +84,14 @@
     }
   }
 
-  .skills {
-    background: #e6e6e6;
-  }
-
-  .languages {
-    background: #e6e6e6;
-  }
-  .hobbies {
-    background: #e6e6e6;
+  .languages .data {
+    display: flex;
+    flex-wrap: wrap;
+    .item {
+      align-items: center;
+      display: flex;
+      margin-right: 10px;
+      flex-direction: column;
+    }
   }
 }

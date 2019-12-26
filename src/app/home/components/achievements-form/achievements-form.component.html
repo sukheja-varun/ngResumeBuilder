@@ -1,0 +1,148 @@
+<!-- ************* awards and certificates  ****************** -->
+<form [formGroup]="achievementsDataForm" (ngSubmit)="onSubmit()">
+  <!--  Experience Section -->
+  <section class="form-alignment">
+    <h2 class="form-title">Awards</h2>
+    <div formArrayName="awards">
+      <ng-container
+        *ngFor="
+          let award of achievementsDataForm.get('awards')['controls'];
+          let i = index
+        "
+      >
+        <div [formGroupName]="i">
+          <!-- Title -->
+          <div class="form-group required">
+            <label>Title</label>
+            <input class="form-control" type="text" formControlName="title" />
+          </div>
+          <!-- Issue Date -->
+          <div class="form-group required">
+            <label>Issue Date</label>
+            <input
+              class="form-control"
+              type="date"
+              formControlName="issueDate"
+            />
+          </div>
+          <!-- Issued By -->
+          <div class="form-group required">
+            <label>Issued By</label>
+            <input
+              class="form-control"
+              type="text"
+              formControlName="issuedBy"
+            />
+          </div>
+          <!-- Short Description -->
+          <div class="form-group">
+            <label>Short Description</label>
+            <input
+              class="form-control"
+              type="text"
+              formControlName="shortDescription"
+            />
+          </div>
+        </div>
+        <h2
+          class="divider line glow"
+          *ngIf="achievementsDataForm.get('awards')['controls'].length > 1"
+        >
+          <span class="pointer" (click)="onDelete(i, 'awards')">
+            Click to delete
+          </span>
+        </h2>
+      </ng-container>
+    </div>
+    <!-- Add New Experience Button -->
+    <button
+      class="add-button"
+      type="button"
+      (click)="onAddMore('awards')"
+      [disabled]="achievementsDataForm.get('awards').invalid"
+    >
+      Add More
+    </button>
+  </section>
+
+  <!-- certificate Section -->
+  <section class="form-alignment">
+    <h2 class="form-title">Certificates</h2>
+    <div formArrayName="certificates">
+      <ng-container
+        *ngFor="
+          let certificate of achievementsDataForm.get('certificates')[
+            'controls'
+          ];
+          let i = index
+        "
+      >
+        <div [formGroupName]="i">
+          <!-- Title -->
+          <div class="form-group required">
+            <label>Title</label>
+            <input class="form-control" type="text" formControlName="title" />
+          </div>
+          <!-- Issue Date -->
+          <div class="form-group required">
+            <label>Issue Date</label>
+            <input
+              class="form-control"
+              type="date"
+              formControlName="issueDate"
+            />
+          </div>
+          <!-- Issued By -->
+          <div class="form-group required">
+            <label>Issued By</label>
+            <input
+              class="form-control"
+              type="text"
+              formControlName="issuedBy"
+            />
+          </div>
+          <!-- Short Description -->
+          <div class="form-group">
+            <label>Short Description</label>
+            <input
+              class="form-control"
+              type="text"
+              formControlName="shortDescription"
+            />
+          </div>
+        </div>
+        <h2
+          class="divider line glow"
+          *ngIf="
+            achievementsDataForm.get('certificates')['controls'].length > 1
+          "
+        >
+          <span class="pointer" (click)="onDelete(i, 'certificates')">
+            Click to delete
+          </span>
+        </h2>
+      </ng-container>
+    </div>
+    <!-- Add New certificate Button -->
+    <button
+      class="add-button"
+      type="button"
+      (click)="onAddMore('certificates')"
+      [disabled]="achievementsDataForm.get('certificates').invalid"
+    >
+      Add More
+    </button>
+    <!-- Submit button -->
+    <button
+      class="success-button"
+      type="submit"
+      [disabled]="achievementsDataForm.invalid"
+    >
+      Submit
+    </button>
+    <!-- Skip button -->
+    <button class="success-button" type="button" (click)="onSkip()">
+      Skip
+    </button>
+  </section>
+</form>
